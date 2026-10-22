@@ -5,7 +5,7 @@ window.INVITE = {
 
   // Background music (starts when the envelope is tapped).
   // Taken from the reference reel: Etrusco Music · Tamil Nadu Traditional Music (Ancient South Indian Heritage)
-  music: { src: "assets/music.mp3", volume: 0.7 },
+  music: { src: "assets/music.mp3?v=2", volume: 0.7 },
 
   // RSVP: WhatsApp number with country code, digits only (e.g. "14695551234").
   // Leave "" and "Send RSVP on WhatsApp" lets the guest pick the chat to send it to.
