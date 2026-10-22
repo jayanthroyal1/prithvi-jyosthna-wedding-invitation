@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Prithvi &amp; Jyosthna | December 19–20, 2026</title>
+  <meta name="description" content="A little rain. A little sunshine. Something good brewing. Join us for the wedding of Prithvi & Jyosthna.">
+  <!-- Link-preview card (WhatsApp, iMessage…): same Srinivasa Kalyanam kumkum patrika as the sister invite.
+       WhatsApp needs absolute URLs — after deploying, swap the image/url to this site's own address
+       (the same image is in assets/og/card-kumkum.jpg). -->
+  <meta property="og:title" content="Prithvi & Jyosthna | December 19–20, 2026">
+  <meta property="og:description" content="Tap to open your invitation.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://prithvi-jyosthna-wedding-invite.vercel.app/assets/og/card-kumkum.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Srinivasa Kalyanam invitation card for Prithvi and Jyosthna">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://prithvi-jyosthna-wedding-invite.vercel.app/assets/og/card-kumkum.jpg">
+  <meta name="theme-color" content="#F6EEE1">
+  <link rel="icon" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=13">
+</head>
+<body class="locked">
+
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <!-- ============ ENVELOPE ============ -->
+  <section id="gate" aria-label="Wedding invitation envelope">
+    <div class="beads" aria-hidden="true"></div>
+    <div class="door door-l" aria-hidden="true"></div>
+    <div class="door door-r" aria-hidden="true"></div>
+    <div class="seal-stage">
+      <!-- Lord Ganesha (Ornate Golden Ganesha with Modaks) appears when the seal is tapped -->
+      <div class="ganesha-halo" aria-hidden="true"></div>
+      <div class="gn-idol" aria-hidden="true">
+        <img src="assets/img/ganesha.webp" alt="">
+        <span class="gn-shine"></span>
+      </div>
+      <button class="seal" id="openBtn" aria-label="Tap to open the invitation">
+        <span class="seal-ring"><span class="seal-mono"><b>P</b><i>&amp;</i><b>J</b></span></span>
+      </button>
+      <div class="ganesha-mantra" aria-hidden="true">
+        <span class="te">|| శ్రీ గణేశాయ నమః ||</span>
+        <small>Om Sri Ganeshaya Namah</small>
+      </div>
+    </div>
+    <p class="tap-label">✦ Tap to open</p>
+    <p class="tap-telugu">శుభలేఖను తెరవండి</p>
+  </section>
+
+  <main id="invite" aria-hidden="true">
+
+    <!-- ============ HERO CARD ============ -->
+    <section class="hero">
+      <div class="thoranam" aria-hidden="true"></div>
+      <p class="ganesha">|| శ్రీ గణేశాయ నమః ||</p>
+      <p class="srirastu">శ్రీరస్తు • శుభమస్తు • అవిఘ్నమస్తు</p>
+      <div class="hero-grid">
+        <figure class="hero-photo reveal">
+          <div class="arch-bg" aria-hidden="true"><span class="arch-garland"></span></div>
+          <img class="couple-cut" src="assets/img/couple-portrait.webp" alt="Prithvi and Jyosthna in traditional South Indian wedding attire" data-parallax="0.04">
+          <span class="arch-floor" aria-hidden="true"></span>
+        </figure>
+        <div class="hero-text reveal">
+          <p class="together">Together with their families,</p>
+          <p class="request">request the honour of your presence</p>
+          <span class="tiny-orn" aria-hidden="true">— ❦ —</span>
+          <h1 class="h-name">Prithvi</h1>
+          <p class="h-tel">చి॥ పృథ్వి</p>
+          <p class="parents">Son of Sri Vidya Shankar &amp; Smt. Anuradha</p>
+          <p class="amp">&amp;</p>
+          <h1 class="h-name">Jyosthna</h1>
+          <p class="h-tel">చి॥ల॥సౌ॥ జ్యోత్స్న</p>
+          <p class="parents">Daughter of Sri Lakshmi Narayana &amp; Smt. Sreedevi</p>
+          <p class="at">at their wedding celebration</p>
+          <p class="when-sm">Saturday, 19 December 2026<br>Muhurtham 7:49 AM CST<br>Serengeti Estates, Texas</p>
+        </div>
+      </div>
+      <div class="kalash-row" aria-hidden="true">
+        <svg class="banana" viewBox="0 0 80 150"><use href="#banana"/></svg>
+        <span class="lamp"></span>
+        <svg class="kalash" viewBox="0 0 120 130"><use href="#kalash"/></svg>
+        <span class="lamp"></span>
+        <svg class="banana flip-x" viewBox="0 0 80 150"><use href="#banana"/></svg>
+      </div>
+      <a class="see-all" href="#welcome">See all celebrations <span>⌄</span></a>
+    </section>
+
+    <!-- ============ WARMLY INVITED ============ -->
+    <section class="welcome" id="welcome">
+      <p class="eyebrow reveal">You are warmly invited</p>
+      <p class="tel-eyebrow reveal">సాదర ఆహ్వానం</p>
+      <div class="tera-stage reveal" id="teraStage">
+        <h2 class="big-name">Prithvi</h2>
+        <p class="big-amp">&amp;</p>
+        <h2 class="big-name">Jyosthna</h2>
+        <div class="tera" aria-hidden="true">
+          <span class="tera-hand l"></span><span class="tera-hand r"></span>
+          <span class="tera-mark">శ్రీ</span>
+          <span class="tera-text">The tera lowers…</span>
+        </div>
+      </div>
+      <p class="telugu reveal">పృథ్వి · జ్యోత్స్న</p>
+      <p class="tera-note reveal">జీలకర్ర బెల్లం — at the muhurtham the tera is lowered and the couple see each other</p>
+      <div class="two-col reveal">
+        <p>S/o Sri Vidya Shankar<br>&amp; Smt. Anuradha</p>
+        <p>D/o Sri Lakshmi Narayana<br>&amp; Smt. Sreedevi</p>
+      </div>
+      <div class="two-col when-where reveal">
+        <div><span class="label">When</span><p>19 December<br>2026</p></div>
+        <div><span class="label">Where</span><p>Serengeti Estates<br>Melissa, Texas</p></div>
+      </div>
+      <p class="hashtag reveal">#PrithviकीJyo</p>
+      <p class="tel-invite reveal">మా ఇంట జరుగు వివాహ మహోత్సవమునకు తాము సకుటుంబ సపరివార సమేతంగా విచ్చేసి, వధూవరులను ఆశీర్వదించవలసినదిగా ప్రార్థన.</p>
+      <p class="en-invite reveal">With joyful hearts and the blessings of our families, we invite you to celebrate the beginning of our forever.</p>
+      <svg class="muggu reveal" viewBox="0 0 220 60" aria-hidden="true"><use href="#muggu"/></svg>
+    </section>
+
+    <!-- ============ FESTIVITIES ============ -->
+    <section class="festivities">
+      <p class="eyebrow reveal">Two days of celebration</p>
+      <h2 class="section-title reveal">The Festivities</h2>
+      <p class="tel-eyebrow reveal">పెళ్లి వేడుకలు</p>
+
+      <ol class="timeline">
+        <li class="event reveal">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="event-body">
+            <p class="ev-date">Saturday, 19 December 2026</p>
+            <h3 class="ev-name">The Wedding</h3>
+            <p class="ev-sub">సుముహూర్తం · Jeelakarra Bellam</p>
+            <p class="ev-meta"><b>7:49 AM CST</b> · Serengeti Estates, Melissa</p>
+            <p class="ev-quote">“Mangalyam tantunanena — the sacred knot, with your blessings.”</p>
+            <a class="pill" data-cal="wedding" href="#" target="_blank" rel="noopener">+ Add to calendar</a>
+          </div>
+          <button class="thumb thumb-gold" data-open="rub" aria-label="Rub to reveal the wedding card">
+            <span class="thumb-art"><svg viewBox="0 0 120 130"><use href="#kalash"/></svg></span>
+            <span class="thumb-label">Rub to reveal</span>
+          </button>
+        </li>
+
+        <li class="event reveal">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="event-body">
+            <p class="ev-date">Sunday, 20 December 2026</p>
+            <h3 class="ev-name">Cocktails &amp; Celebration</h3>
+            <p class="ev-sub">విందు • వినోదం · The knot is tied, the hearts are full.</p>
+            <p class="ev-meta"><b>6 PM CST onwards</b> · Serengeti Estates, Melissa</p>
+            <p class="ev-quote">“Maatalu chaalu… music penchudama? Steppuleyudama?”</p>
+            <a class="pill" data-cal="celebration" href="#" target="_blank" rel="noopener">+ Add to calendar</a>
+          </div>
+          <button class="thumb thumb-red" data-open="dhol" aria-label="Tap the dhol to reveal the celebration card">
+            <span class="thumb-art"><svg viewBox="0 0 220 150"><use href="#dhol"/></svg></span>
+            <span class="thumb-label">Tap the dhol</span>
+          </button>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ SACRED RITUALS ============ -->
+    <section class="rituals">
+      <p class="eyebrow reveal">A Telugu Brahmin wedding</p>
+      <h2 class="section-title reveal">The Sacred Rituals</h2>
+      <p class="tel-eyebrow reveal">కళ్యాణ వైభోగమే</p>
+      <p class="lead reveal">Each Vedic ritual is a blessing for the life they begin together.</p>
+      <ol class="rite-path" id="ritePath">
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౧</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4c4 5 8 6 12 4M6 4c1 6 4 11 12 16"/><circle cx="18" cy="8" r="1.6"/><path d="M8 12c3 1 6 1 9-1"/></svg></span>
+            <p class="r-tel">స్నాతకం</p>
+            <h3>Snathakam</h3>
+            <p class="r-desc">The groom completes his student life, takes the sacred thread and is blessed to enter married life.</p>
+          </article>
+        </li>
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౨</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0Z"/><path d="M12 12v7a2 2 0 0 1-4 0"/><path d="M12 3v1"/></svg></span>
+            <p class="r-tel">కాశీ యాత్ర</p>
+            <h3>Kashi Yatra</h3>
+            <p class="r-desc">The groom sets off for Kashi with umbrella and staff — until the bride’s brother persuades him to marry.</p>
+          </article>
+        </li>
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౩</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6c0 7 4 11 8 11s8-4 8-11"/><circle cx="6" cy="11" r="1.3"/><circle cx="9" cy="14.5" r="1.3"/><circle cx="12" cy="16" r="1.3"/><circle cx="15" cy="14.5" r="1.3"/><circle cx="18" cy="11" r="1.3"/></svg></span>
+            <p class="r-tel">ఎదురుకోలు</p>
+            <h3>Edurukolu</h3>
+            <p class="r-desc">The two families come face to face and welcome each other with music, flowers and joy.</p>
+          </article>
+        </li>
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౪</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 8h8l-1 2c3 1.5 4 4 4 6.5S16.5 21 12 21s-7-2-7-4.5S6 11.5 9 10Z"/><path d="M12 8c-2-3-5-4-7-3M12 8c2-3 5-4 7-3M12 8V4"/></svg></span>
+            <p class="r-tel">కన్యాదానం</p>
+            <h3>Kanyadanam</h3>
+            <p class="r-desc">The bride’s parents place her hand in the groom’s, praying for her lifelong happiness.</p>
+          </article>
+        </li>
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౫</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="7" height="7" rx="1.5"/><path d="M15 8c2 1 3 3 2.5 6M18 6c1.5 1.5 2 3.5 1.5 5.5M14 13c1.5.5 2.5 2 2.5 4"/></svg></span>
+            <p class="r-tel">జీలకర్ర బెల్లం</p>
+            <h3>Jeelakarra Bellam</h3>
+            <p class="r-desc">At the muhurtham the tera is lowered and the couple place cumin and jaggery on each other’s head.</p>
+          </article>
+        </li>
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౬</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4c0 8 3.5 12 8 12s8-4 8-12"/><circle cx="10" cy="18.5" r="2"/><circle cx="14" cy="18.5" r="2"/></svg></span>
+            <p class="r-tel">మాంగల్య ధారణ</p>
+            <h3>Mangalya Dharana</h3>
+            <p class="r-desc">The groom ties the mangalasutram as “Mangalyam tantunanena” is chanted.</p>
+          </article>
+        </li>
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౭</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="7" cy="8" rx="1.2" ry="2.4" transform="rotate(30 7 8)"/><ellipse cx="13" cy="6" rx="1.2" ry="2.4" transform="rotate(-20 13 6)"/><ellipse cx="17" cy="11" rx="1.2" ry="2.4" transform="rotate(50 17 11)"/><ellipse cx="9" cy="14" rx="1.2" ry="2.4" transform="rotate(-40 9 14)"/><ellipse cx="14" cy="17" rx="1.2" ry="2.4" transform="rotate(15 14 17)"/><circle cx="6" cy="19" r="1"/><circle cx="18" cy="18" r="1"/></svg></span>
+            <p class="r-tel">తలంబ్రాలు</p>
+            <h3>Talambralu</h3>
+            <p class="r-desc">Bride and groom shower each other with turmeric rice and pearls, wishing each other abundance.</p>
+          </article>
+        </li>
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౮</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4c2 0 3 2 3 5s-1 5-3 5-3-2-3-5 1-5 3-5ZM16 10c2 0 3 2 3 5s-1 5-3 5-3-2-3-5 1-5 3-5Z"/><path d="M7 16.5v1.5M17 21.5v.5"/></svg></span>
+            <p class="r-tel">సప్తపది</p>
+            <h3>Saptapadi</h3>
+            <p class="r-desc">Seven steps around the sacred fire, each one a vow for the life they share.</p>
+          </article>
+        </li>
+        <li class="rite reveal">
+          <span class="rite-node" aria-hidden="true">౯</span>
+          <article class="rite-card">
+            <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7Z"/></svg></span>
+            <p class="r-tel">అరుంధతి నక్షత్రం</p>
+            <h3>Arundhati Nakshatram</h3>
+            <p class="r-desc">The couple is shown the Arundhati star, the timeless symbol of a devoted bond.</p>
+          </article>
+        </li>
+      </ol>
+      <p class="rite-end reveal" aria-hidden="true">శుభం</p>
+      <blockquote class="shloka reveal">
+        <p class="sh-tel">మాంగల్యం తంతునానేన<br>మమ జీవన హేతునా</p>
+        <p class="sh-en">“With this sacred thread, the very cause of my life…”</p>
+      </blockquote>
+    </section>
+
+    <!-- ============ PICK YOUR SIDE ============ -->
+    <section class="sides">
+      <p class="eyebrow reveal">A little friendly rivalry</p>
+      <h2 class="section-title reveal">Pick your side</h2>
+      <p class="lead reveal">Whose side are you cheering for? Tap to join — your pick rides along with your RSVP.</p>
+      <div class="side-cards reveal">
+        <button class="side" data-side="Team Groom · Prithvi">
+          <span class="side-icon gold">☀</span>
+          <span class="side-team">Team Groom</span>
+          <span class="side-name">Prithvi</span>
+        </button>
+        <span class="vs">vs</span>
+        <button class="side" data-side="Team Bride · Jyosthna">
+          <span class="side-icon pink">❀</span>
+          <span class="side-team">Team Bride</span>
+          <span class="side-name">Jyosthna</span>
+        </button>
+      </div>
+      <p class="side-note" id="sideNote" aria-live="polite"></p>
+    </section>
+
+    <!-- ============ COUNTDOWN ============ -->
+    <section class="countdown">
+      <p class="eyebrow light">Counting down to the muhurtham</p>
+      <p class="cd-sub">సుముహూర్తానికి ఇంకా</p>
+      <div class="tiles">
+        <div class="tile"><b id="cdD">000</b><span>Days</span></div>
+        <div class="tile"><b id="cdH">00</b><span>Hours</span></div>
+        <div class="tile"><b id="cdM">00</b><span>Mins</span></div>
+        <div class="tile"><b id="cdS">00</b><span>Secs</span></div>
+      </div>
+      <p class="cd-telugu">శ్రీరస్తు • శుభమస్తు • అవిఘ్నమస్తు</p>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section class="rsvp">
+      <div class="rsvp-card reveal">
+        <header class="rsvp-band">
+          <div class="diyas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="eyebrow light">Kindly respond</p>
+          <h2 class="rsvp-title">Will you join us?</h2>
+          <p class="rsvp-tel">మీ రాక మాకు ఆనందం</p>
+          <svg class="band-muggu" viewBox="0 0 220 60" aria-hidden="true"><use href="#muggu"/></svg>
+        </header>
+
+        <p class="rsvp-lead">Kindly reply so we can welcome you and your family to two days of celebration — your response opens straight in WhatsApp.</p>
+
+        <div class="quick">
+          <a class="quick-tile" data-cal="wedding" href="#" target="_blank" rel="noopener">
+            <span class="q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="15" r="1.8" fill="currentColor"/></svg></span>
+            <span class="q-text"><b>Save the date</b><small>19 Dec · 7:49 AM CST</small></span>
+          </a>
+          <a class="quick-tile" id="directions" href="#" target="_blank" rel="noopener">
+            <span class="q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg></span>
+            <span class="q-text"><b>Directions</b><small>Melissa, Texas</small></span>
+          </a>
+        </div>
+
+        <form id="rsvpForm" novalidate>
+          <div class="step">
+            <label class="step-label" for="gName"><span class="step-no">1</span>Your name</label>
+            <input id="gName" name="name" type="text" placeholder="e.g. Lakshmi Iyer" autocomplete="name" required>
+          </div>
+
+          <div class="step">
+            <span class="step-label"><span class="step-no">2</span>Will you attend?</span>
+            <div class="toggle" role="radiogroup" aria-label="Will you attend?">
+              <button type="button" class="opt on" data-attend="yes" role="radio" aria-checked="true">
+                <span class="opt-ico" aria-hidden="true">🙏</span><b>Joyfully yes</b><small>తప్పకుండా వస్తాం</small>
+              </button>
+              <button type="button" class="opt" data-attend="no" role="radio" aria-checked="false">
+                <span class="opt-ico" aria-hidden="true">💌</span><b>Regretfully no</b><small>ఆశీస్సులు పంపుతాం</small>
+              </button>
+            </div>
+          </div>
+
+          <div id="attendYes">
+           <div class="ay-inner">
+            <div class="step">
+              <span class="step-label"><span class="step-no">3</span>Which celebrations? <i>tap all that apply</i></span>
+              <div class="chips">
+                <button type="button" class="chip on" data-ev="The Wedding"><b>The Wedding</b><small>Sat 19 Dec · 7:49 AM</small></button>
+                <button type="button" class="chip on" data-ev="Cocktails & Celebration"><b>Celebration</b><small>Sun 20 Dec · 6 PM</small></button>
+              </div>
+            </div>
+            <div class="step">
+              <label class="step-label" for="gCount"><span class="step-no">4</span>Number of guests</label>
+              <div class="stepper">
+                <button type="button" class="st-btn" data-step="-1" aria-label="Fewer guests">−</button>
+                <input id="gCount" name="count" type="number" min="1" max="20" value="1" inputmode="numeric" aria-label="Number of guests">
+                <button type="button" class="st-btn" data-step="1" aria-label="More guests">+</button>
+              </div>
+            </div>
+           </div>
+          </div>
+
+          <p class="f-error" id="fError" aria-live="polite"></p>
+          <button type="submit" class="wa-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Send RSVP on WhatsApp
+          </button>
+          <p class="alt-rsvp"><span id="callLine">Prefer to call? <a id="callLink" href="#">Call the family</a> · </span><a id="formLink" href="#" target="_blank" rel="noopener">RSVP by form</a></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="blessing">
+      <p class="om">ఓం</p>
+      <p class="bless-text">With the blessings of our elders<br>and the warmth of your presence.</p>
+      <p class="bless-names">Prithvi &amp; Jyosthna</p>
+      <p class="bless-tel">శుభం భూయాత్</p>
+      <p class="made">Made with love · by brother</p>
+    </footer>
+  </main>
+
+  <!-- ============ REVEAL MODAL ============ -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Reveal card" hidden>
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+
+    <!-- Rub to reveal: The Wedding -->
+    <div class="rcard rcard-rub" data-card="rub" hidden>
+      <span class="reveal-pill">Reveal •</span>
+      <div class="rc-inner rc-wedding">
+        <div class="rc-arch"><img src="assets/img/kalyanam.webp" alt="Srinivasa Kalyanam painting"></div>
+        <p class="rc-small">Join us to celebrate the</p>
+        <p class="rc-script">Wedding</p>
+        <p class="rc-caps">Ceremony</p>
+        <p class="rc-tel">కళ్యాణ వైభోగమే</p>
+        <p class="rc-detail">Saturday · <b>19th</b> December 2026<br>Muhurtham 7:49 AM CST<br>Serengeti Estates, Melissa, Texas</p>
+      </div>
+      <canvas class="scratch" id="scratch" aria-label="Rub here to reveal"></canvas>
+      <p class="rc-caption">Rub off the turmeric</p>
+    </div>
+
+    <!-- Tap the dhol: Cocktails & Celebration -->
+    <div class="rcard rcard-dhol" data-card="dhol" hidden>
+      <div class="flip" id="dholFlip">
+        <div class="face front">
+          <span class="reveal-pill">Reveal •</span>
+          <button class="dhol-btn" id="dholBtn" aria-label="Tap the dhol">
+            <svg viewBox="0 0 220 150"><use href="#dhol"/></svg>
+          </button>
+          <p class="dhol-title">Tap the dhol</p>
+          <div class="beats" id="beats"><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="rc-caption light">Tap the dhol to the beat</p>
+        </div>
+        <div class="face back">
+          <div class="rc-photo"><img src="assets/img/celebration.webp" alt="Prithvi and Jyosthna at the lake"></div>
+          <p class="rc-small">The knot is tied, the hearts are full —</p>
+          <p class="rc-script">Celebration</p>
+          <p class="rc-caps">Cocktails &amp; Dance</p>
+          <p class="rc-detail">Sunday · <b>20th</b> December 2026<br>6 PM CST onwards<br>Serengeti Estates, Melissa, Texas</p>
+          <p class="rc-quote">Glass lo konchem… playlist lo inkonchem… dance floor meedha motham!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="music-btn" id="musicBtn" aria-label="Pause music" hidden>♪</button>
+  <audio id="music" preload="auto" loop></audio>
+
+  <!-- ============ SVG SYMBOLS ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="gGold" x1="0" x2="1">
+        <stop offset="0" stop-color="#8a5a12"/><stop offset=".35" stop-color="#f3d27a"/>
+        <stop offset=".6" stop-color="#c8962f"/><stop offset="1" stop-color="#7a4d0e"/>
+      </linearGradient>
+      <linearGradient id="gWood" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#c46a2b"/><stop offset=".45" stop-color="#8e3b12"/><stop offset="1" stop-color="#4f1d08"/>
+      </linearGradient>
+      <radialGradient id="gSkin" cx=".4" cy=".4">
+        <stop offset="0" stop-color="#fff6e3"/><stop offset="1" stop-color="#d9c29a"/>
+      </radialGradient>
+      <symbol id="kalash" viewBox="0 0 120 130">
+        <g fill="#3f7a2a">
+          <path d="M60 34 C40 30 22 20 14 6 C32 8 50 18 60 34Z"/><path d="M60 34 C80 30 98 20 106 6 C88 8 70 18 60 34Z"/>
+          <path d="M60 34 C48 24 40 10 42 0 C54 8 60 20 60 34Z" fill="#5a9a3a"/><path d="M60 34 C72 24 80 10 78 0 C66 8 60 20 60 34Z" fill="#5a9a3a"/>
+        </g>
+        <ellipse cx="60" cy="30" rx="15" ry="13" fill="#8a5a2b"/><ellipse cx="57" cy="26" rx="6" ry="4" fill="#b07a42"/>
+        <path d="M38 44 h44 l-4 8 h-36Z" fill="url(#gGold)"/>
+        <path d="M42 52 C14 62 14 112 40 122 h40 C106 112 106 62 78 52Z" fill="url(#gGold)"/>
+        <path d="M24 84 h72" stroke="#9e1b1b" stroke-width="5"/><path d="M26 92 h68" stroke="#7a4d0e" stroke-width="1.5"/>
+        <g fill="#9e1b1b"><circle cx="60" cy="72" r="5"/></g>
+        <path d="M44 122 h32 l6 8 h-44Z" fill="#7a4d0e"/>
+        <g fill="#f29a1d"><circle cx="30" cy="50" r="5"/><circle cx="90" cy="50" r="5"/><circle cx="22" cy="60" r="4"/><circle cx="98" cy="60" r="4"/></g>
+      </symbol>
+      <symbol id="banana" viewBox="0 0 80 150">
+        <path d="M36 150 C34 110 36 80 40 50 C44 80 46 110 44 150Z" fill="#7a9a3a"/>
+        <g fill="#4f8a2c" stroke="#3a6a1e" stroke-width="1">
+          <path d="M40 52 C20 40 6 20 2 2 C18 10 34 26 40 52Z"/>
+          <path d="M40 52 C60 38 74 22 78 4 C62 12 46 28 40 52Z"/>
+          <path d="M40 70 C18 66 4 52 0 36 C16 40 32 52 40 70Z" fill="#5f9e36"/>
+          <path d="M40 70 C62 64 76 50 80 34 C64 40 48 52 40 70Z" fill="#5f9e36"/>
+          <path d="M40 52 C38 32 40 14 44 0 C48 16 46 34 40 52Z" fill="#6cad3e"/>
+        </g>
+        <g fill="#e8c23a"><ellipse cx="34" cy="90" rx="3" ry="7"/><ellipse cx="40" cy="92" rx="3" ry="7"/><ellipse cx="46" cy="90" rx="3" ry="7"/></g>
+      </symbol>
+      <symbol id="muggu" viewBox="0 0 220 60">
+        <g fill="none" stroke="#b8892f" stroke-width="1.4" stroke-linecap="round">
+          <path d="M0 30 H70 M150 30 H220"/>
+          <path d="M110 6 C126 18 126 42 110 54 C94 42 94 18 110 6Z"/>
+          <path d="M86 30 C98 14 122 14 134 30 C122 46 98 46 86 30Z"/>
+          <path d="M92 12 C106 22 106 38 92 48 M128 12 C114 22 114 38 128 48"/>
+          <circle cx="110" cy="30" r="5" fill="#9e1b1b" stroke="none"/>
+          <path d="M70 30 C76 22 82 22 86 30 C82 38 76 38 70 30Z M150 30 C144 22 138 22 134 30 C138 38 144 38 150 30Z"/>
+        </g>
+        <g fill="#b8892f"><circle cx="110" cy="0.5" r="1.6"/><circle cx="110" cy="59.5" r="1.6"/><circle cx="80" cy="14" r="1.6"/><circle cx="140" cy="14" r="1.6"/><circle cx="80" cy="46" r="1.6"/><circle cx="140" cy="46" r="1.6"/><circle cx="58" cy="30" r="2"/><circle cx="162" cy="30" r="2"/><circle cx="40" cy="30" r="1.4"/><circle cx="180" cy="30" r="1.4"/></g>
+        <g fill="#ef7d14"><circle cx="98" cy="30" r="2.4"/><circle cx="122" cy="30" r="2.4"/><circle cx="110" cy="18" r="2.4"/><circle cx="110" cy="42" r="2.4"/></g>
+      </symbol>
+      <symbol id="dhol" viewBox="0 0 220 150">
+        <path d="M40 30 h140 a28 45 0 0 1 0 90 h-140Z" fill="url(#gWood)"/>
+        <g stroke="#f6efe2" stroke-width="3" fill="none">
+          <path d="M44 34 L72 116 L100 34 L128 116 L156 34 L184 112"/>
+          <path d="M44 116 L72 34 L100 116 L128 34 L156 116 L180 40"/>
+        </g>
+        <ellipse cx="40" cy="75" rx="28" ry="46" fill="#5a2a10"/>
+        <ellipse cx="40" cy="75" rx="23" ry="40" fill="url(#gSkin)"/>
+        <ellipse cx="180" cy="75" rx="28" ry="46" fill="none" stroke="#3a1a08" stroke-width="5"/>
+        <g fill="#2f7d4a"><circle cx="112" cy="122" r="6"/></g><g fill="#e4405f"><circle cx="124" cy="128" r="6"/></g><g fill="#f2b51d"><circle cx="100" cy="128" r="5"/></g>
+        <path d="M112 128 v16 M124 134 v12 M100 133 v12" stroke="#e4405f" stroke-width="3"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="config.js?v=2"></script>
+  <script src="script.js?v=11"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Local tooling
+.claude/
+
+# Full-size originals — the site uses the compressed .webp copies
+assets/img/Ornate Golden Ganesha with Modaks.png
+assets/img/South Indian Wedding Couple Portrait.png
+assets/img/Telugu Wedding Couple Cutout Portrait.png
+
+# Earlier couple photos no longer used
+assets/img/couple.webp
+assets/img/couple-cutout.webp
