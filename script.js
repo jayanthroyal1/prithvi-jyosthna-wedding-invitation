@@ -58,6 +58,24 @@
     audio.play().then(() => { setPlaying(true); fadeMusic(C.music.volume, 1500); }).catch(() => {});
   };
 
+  /* ---------- Hero fits one screen (scaled down on short phones so the scroll cue stays visible) ---------- */
+  const heroFit = $("#heroFit");
+  const fitHero = () => {
+    const H = innerHeight - 8;                // leave room for the bouncing scroll arrow
+    heroFit.style.zoom = 1;
+    let z = 1;
+    for (let i = 0; i < 3; i++) {             // re-measure: at a smaller zoom the text wraps differently
+      const h = heroFit.getBoundingClientRect().height;
+      if (h <= H + 1) break;
+      z = Math.max(.6, z * H / h);
+      heroFit.style.zoom = z;
+    }
+  };
+  fitHero();
+  addEventListener("resize", fitHero);
+  document.fonts?.ready.then(fitHero);
+  $$("img", heroFit).forEach(img => img.complete || img.addEventListener("load", fitHero));
+
   /* ---------- Envelope ---------- */
   const gate = $("#gate");
   const openInvite = () => {

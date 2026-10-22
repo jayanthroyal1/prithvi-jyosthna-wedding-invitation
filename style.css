@@ -89,9 +89,16 @@ img { display: block; max-width: 100%; }
 }
 .seal-mono b { font-family: "Cinzel Decorative", var(--caps); font-weight: 700; font-size: 34px; }
 .seal-mono i { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 26px; margin-top: 4px; }
-.tap-label, .tap-telugu { position: relative; z-index: 3; transition: opacity .5s; }
-.tap-label { font-family: var(--caps); font-weight: 600; letter-spacing: .32em; font-size: 12px; color: #c8102e; text-transform: uppercase; text-shadow: 0 1px 0 rgba(255,240,200,.45); }
-.tap-telugu { font-family: var(--telugu); font-size: 16px; color: #c8102e; text-shadow: 0 1px 0 rgba(255,240,200,.45); }
+/* Tap text sits on a cream ribbon so the sindoor lettering reads clearly on the gold doors */
+.tap-wrap {
+  position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 10px 26px 11px; border-radius: 14px; background: linear-gradient(#fffaf0, #fbeccb);
+  box-shadow: 0 0 0 1.5px #b8892f, 0 0 0 4px rgba(255,248,230,.55), 0 8px 18px rgba(90,50,0,.3);
+  transition: opacity .5s; animation: tapGlow 2.6s ease-in-out infinite;
+}
+.tap-label { font-family: var(--caps); font-weight: 600; letter-spacing: .28em; font-size: 13px; color: #c8102e; text-transform: uppercase; }
+.tap-telugu { font-family: var(--telugu); font-size: 18px; line-height: 1.3; color: #c8102e; }
+@keyframes tapGlow { 50% { box-shadow: 0 0 0 1.5px #b8892f, 0 0 0 6px rgba(255,248,230,.7), 0 8px 24px rgba(200,16,46,.35); } }
 @keyframes breathe { 50% { transform: scale(1.05); box-shadow: 0 14px 34px rgba(60,0,0,.5), 0 0 0 10px rgba(255,220,150,.18); } }
 
 /* ---------- Lord Ganesha: a gold idol emerging in light (after the seal is tapped) ---------- */
@@ -126,7 +133,7 @@ img { display: block; max-width: 100%; }
 .ganesha-mantra small { font-family: "Cinzel Decorative", var(--caps); font-weight: 700; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: #6b1d1d; text-shadow: 0 0 6px rgba(255,246,225,.9); }
 
 #gate.s1 .seal { transform: scale(.6); opacity: 0; animation: none; }
-#gate.s1 .tap-label, #gate.s1 .tap-telugu { opacity: 0; }
+#gate.s1 .tap-wrap { opacity: 0; animation: none; }
 #gate.s2 .ganesha-halo { transform: translate(-50%, -62%) scale(1); opacity: 1; animation: haloBreath 2.6s ease-in-out 1.8s infinite alternate; }
 #gate.s2 .gn-idol { transform: translate(-50%, -62%) scale(1); opacity: 1; filter: none; }
 #gate.s2 .gn-shine { animation: gnShine 1.6s cubic-bezier(.4,0,.2,1) 1.6s forwards; }
@@ -140,7 +147,7 @@ img { display: block; max-width: 100%; }
 #gate.opening .door-l { transform: rotateY(-108deg); }
 #gate.opening .door-r { transform: rotateY(108deg); }
 #gate.opening .seal { transform: scale(1.6); opacity: 0; animation: none; }
-#gate.opening .tap-label, #gate.opening .tap-telugu, #gate.opening .beads { opacity: 0; }
+#gate.opening .tap-wrap, #gate.opening .beads { opacity: 0; }
 #gate.gone { display: none; }
 
 /* ---------- Page ---------- */
@@ -169,11 +176,15 @@ body.modal-open { overflow: hidden; }
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 0 0 28px;
+  padding: 0; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; overflow: hidden;
   background:
     radial-gradient(ellipse at 50% 100%, rgba(233,200,115,.35), transparent 60%),
     linear-gradient(#fdf8ee, #f6ecd8);
 }
+/* Hero fills exactly one screen: top (thoranam) · couple & names · foot (kalash + scroll cue).
+   script.js scales .hero-fit down with `zoom` on short screens so the scroll cue always shows. */
+.hero-fit { width: 100%; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 14px; }
+.hero-foot { display: flex; flex-direction: column; align-items: center; }
 .thoranam { height: 92px; position: relative; }
 .thoranam svg { width: 100%; height: 100%; display: block; }
 .ganesha { font-family: var(--telugu); color: var(--kumkum); font-size: 14px; margin-top: 2px; }

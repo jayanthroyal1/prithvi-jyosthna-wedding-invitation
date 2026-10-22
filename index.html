@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body class="locked">
 
@@ -52,17 +52,22 @@
         <small>Om Sri Ganeshaya Namah</small>
       </div>
     </div>
-    <p class="tap-label">✦ Tap to open</p>
-    <p class="tap-telugu">శుభలేఖను తెరవండి</p>
+    <div class="tap-wrap">
+      <p class="tap-label">✦ Tap to open ✦</p>
+      <p class="tap-telugu">శుభలేఖను తెరవండి</p>
+    </div>
   </section>
 
   <main id="invite" aria-hidden="true">
 
     <!-- ============ HERO CARD ============ -->
-    <section class="hero">
-      <div class="thoranam" aria-hidden="true"></div>
-      <p class="ganesha">|| శ్రీ గణేశాయ నమః ||</p>
-      <p class="srirastu">శ్రీరస్తు • శుభమస్తు • అవిఘ్నమస్తు</p>
+    <section class="hero" id="hero">
+     <div class="hero-fit" id="heroFit">
+      <div class="hero-top">
+        <div class="thoranam" aria-hidden="true"></div>
+        <p class="ganesha">|| శ్రీ గణేశాయ నమః ||</p>
+        <p class="srirastu">శ్రీరస్తు • శుభమస్తు • అవిఘ్నమస్తు</p>
+      </div>
       <div class="hero-grid">
         <figure class="hero-photo reveal">
           <div class="arch-bg" aria-hidden="true"><span class="arch-garland"></span></div>
@@ -84,6 +89,7 @@
           <p class="when-sm">Saturday, 19 December 2026<br>Muhurtham 7:49 AM CST<br>Serengeti Estates, Texas</p>
         </div>
       </div>
+      <div class="hero-foot">
       <div class="kalash-row" aria-hidden="true">
         <svg class="banana" viewBox="0 0 80 150"><use href="#banana"/></svg>
         <span class="lamp"></span>
@@ -92,6 +98,8 @@
         <svg class="banana flip-x" viewBox="0 0 80 150"><use href="#banana"/></svg>
       </div>
       <a class="see-all" href="#welcome">See all celebrations <span>⌄</span></a>
+      </div>
+     </div>
     </section>
 
     <!-- ============ WARMLY INVITED ============ -->
@@ -488,6 +496,6 @@
   </svg>
 
   <script src="config.js?v=2"></script>
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=16"></script>
 </body>
 </html>
