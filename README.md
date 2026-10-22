@@ -14,8 +14,8 @@ card/        శుభలేఖ — traditional Telugu wedding card (shubhalekha
 ## Before sharing
 - `config.js`: set `whatsappNumber` (digits with country code) so RSVPs go straight to the family,
   and `callNumber` to show "Call the family".
-- `index.html`: the WhatsApp preview image (`og:image`) points to the sister invite's card. After deploying,
-  change it to this site's own address, e.g. `https://<your-site>/assets/og/card-kumkum.jpg`.
+- WhatsApp preview: `assets/og/invite-card.jpg` (1200×630, built from `card/og-card.html`). `og:image` serves it
+  from this GitHub repo, so the repo must stay public; WhatsApp caches previews, so a changed card can take a while to show.
 
 ## Run locally
 `python -m http.server 5178` in this folder, then open http://localhost:5178.
