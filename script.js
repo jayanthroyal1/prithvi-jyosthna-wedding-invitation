@@ -87,17 +87,21 @@
     gate.classList.add("s1");                                       // seal gives way
     setTimeout(() => gate.classList.add("s2"), t(350));             // Lord Ganesha draws in gold
     setTimeout(() => gate.classList.add("s3"), t(3700));            // Ganesha rises and fades
-    setTimeout(() => {                                              // the doors open
-      gate.classList.add("opening");
-      document.body.classList.add("opened");
-      burst(45);
-    }, t(4300));
-    setTimeout(startReveals, t(4800));
+    setTimeout(() => gate.classList.add("opening"), t(4300));       // the doors open on the doorway
+    setTimeout(() => { gate.classList.add("emerge"); burst(45); }, t(4700)); // "Mana Pelli" steps out
+    setTimeout(() => {                                              // it fades away slowly,
+      gate.classList.add("settle");
+      document.body.classList.add("opened");                        // while the hero gets ready underneath
+    }, t(7600));
+    setTimeout(() => {                                              // the scene dissolves into the hero
+      gate.classList.add("fade");
+      startReveals();
+    }, t(8900));
     setTimeout(() => {
       gate.classList.add("gone");
       document.body.classList.remove("locked");
       window.scrollTo(0, 0);
-    }, t(6100));
+    }, t(10100));
   };
   $("#openBtn").addEventListener("click", openInvite);
 
@@ -290,6 +294,56 @@
   modal.addEventListener("click", e => { if (e.target === modal) closeCard(); });
   addEventListener("keydown", e => { if (e.key === "Escape" && !modal.hidden) closeCard(); });
 
+  /* ---------- Sacred ritual detail: tap a ritual card to read more ---------- */
+  const riteItems = $$("#ritePath .rite"), riteDetail = $("#riteDetail"), riteCard = $(".rcard-rite");
+  let riteIdx = 0;
+  const fillRite = (i, dir = 0) => {
+    riteIdx = (i + riteItems.length) % riteItems.length;
+    const li = riteItems[riteIdx], info = $(".rite-info", li).content.cloneNode(true);
+    const el = (tag, cls, html) => Object.assign(document.createElement(tag), { className: cls, innerHTML: html });
+    riteDetail.replaceChildren(
+      info.querySelector(".rd-art"),
+      el("p", "rd-num", `${$(".rite-node", li).textContent} · Ritual ${riteIdx + 1} of ${riteItems.length}`),
+      el("h3", "rd-tel", $(".r-tel", li).textContent),
+      el("p", "rd-en", $("h3", li).textContent),
+      ...info.childNodes
+    );
+    $("#riteCount").textContent = `${riteIdx + 1} / ${riteItems.length}`;
+    riteDetail.scrollTop = 0;
+    if (dir && !reduce) riteDetail.animate([{ opacity: 0, transform: `translateX(${dir * 28}px)` }, { opacity: 1, transform: "none" }], { duration: 380, easing: "cubic-bezier(.2,.8,.2,1)" });
+  };
+  const openRite = (i, from) => {
+    fillRite(i);
+    openCard("rite");
+    if (reduce) return;
+    // grow the detail card out of the tapped ritual card
+    const a = from.getBoundingClientRect(), b = riteCard.getBoundingClientRect();
+    const dx = a.left + a.width / 2 - (b.left + b.width / 2), dy = a.top + a.height / 2 - (b.top + b.height / 2);
+    riteCard.animate([
+      { transform: `translate(${dx}px, ${dy}px) scale(${a.width / b.width}, ${a.height / b.height})`, opacity: .35, borderRadius: "16px" },
+      { transform: "none", opacity: 1 }
+    ], { duration: 520, easing: "cubic-bezier(.2,.8,.2,1)" });
+  };
+  riteItems.forEach((li, i) => {
+    const card = $(".rite-card", li);
+    card.addEventListener("click", () => openRite(i, card));
+    card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openRite(i, card); } });
+  });
+  $("#ritePrev").addEventListener("click", () => fillRite(riteIdx - 1, -1));
+  $("#riteNext").addEventListener("click", () => fillRite(riteIdx + 1, 1));
+  addEventListener("keydown", e => {
+    if (modal.hidden || riteCard.hidden) return;
+    if (e.key === "ArrowLeft") fillRite(riteIdx - 1, -1);
+    if (e.key === "ArrowRight") fillRite(riteIdx + 1, 1);
+  });
+  let swipeX = null;
+  riteCard.addEventListener("touchstart", e => { swipeX = e.touches[0].clientX; }, { passive: true });
+  riteCard.addEventListener("touchend", e => {
+    if (swipeX === null) return;
+    const d = e.changedTouches[0].clientX - swipeX; swipeX = null;
+    if (Math.abs(d) > 60) fillRite(riteIdx + (d < 0 ? 1 : -1), d < 0 ? 1 : -1);
+  });
+
   /* Rub to reveal — a turmeric-gold layer that wipes away */
   const scratch = $("#scratch"), sctx = scratch.getContext("2d", { willReadFrequently: true });
   const rubCard = $(".rcard-rub");
@@ -333,72 +387,117 @@
   scratch.addEventListener("pointerup", endRub);
   scratch.addEventListener("pointercancel", endRub);
 
-  /* ---------- Dhol: synthesised bass (dagga) and treble (tilli) heads with ghungroo jingles ---------- */
+  /* ---------- Dhol card sound: a Telugu bajantri (melam) — nadaswaram in raga Mohanam over dolu/tavil and jalra ---------- */
   const Dhol = (() => {
     let ctx = null, out = null, noise = null, voices = [], queueEnd = 0;
+    const SA = 233.08;                       // nadaswaram sruti around B♭ (Sa)
+    const beat = 60 / 150;                   // one beat; phrases are written in eighths
     const init = () => {
       if (ctx) return ctx.state === "suspended" ? ctx.resume() : null;
       ctx = new (window.AudioContext || window.webkitAudioContext)();
       const comp = ctx.createDynamicsCompressor();
-      out = ctx.createGain(); out.gain.value = .9;
+      out = ctx.createGain(); out.gain.value = .85;
       out.connect(comp).connect(ctx.destination);
       noise = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate);
       const d = noise.getChannelData(0);
       for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
     };
-    const env = (t, peak, decay) => {
+    const keep = n => { voices.push(n); return n; };
+    const env = (t, peak, attack, hold, release, dest = out) => {
       const g = ctx.createGain();
-      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + .004);
-      g.gain.exponentialRampToValueAtTime(.0001, t + decay);
-      g.connect(out); return g;
-    };
-    const tone = (t, type, f0, f1, peak, decay) => {
-      const o = ctx.createOscillator(); o.type = type;
-      o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + decay * .6);
-      o.connect(env(t, peak, decay)); o.start(t); o.stop(t + decay + .05); voices.push(o);
+      g.gain.setValueAtTime(.0001, t);
+      g.gain.exponentialRampToValueAtTime(peak, t + attack);
+      g.gain.setValueAtTime(peak, t + attack + hold);
+      g.gain.exponentialRampToValueAtTime(.0001, t + attack + hold + release);
+      g.connect(dest); return g;
     };
     const hiss = (t, type, freq, q, peak, decay) => {
-      const s = ctx.createBufferSource(); s.buffer = noise;
+      const s = keep(ctx.createBufferSource()); s.buffer = noise;
       const f = ctx.createBiquadFilter(); f.type = type; f.frequency.value = freq; f.Q.value = q;
-      s.connect(f).connect(env(t, peak, decay)); s.start(t); s.stop(t + decay + .05); voices.push(s);
+      s.connect(f).connect(env(t, peak, .002, 0, decay)); s.start(t); s.stop(t + decay + .05);
     };
-    const hit = {
-      D: (t, v) => { tone(t, "sine", 150, 52, .95 * v, .5); hiss(t, "lowpass", 380, .7, .35 * v, .05); },     // dagga — deep boom
-      t: (t, v) => { hiss(t, "bandpass", 2600, 1.4, .55 * v, .07); tone(t, "triangle", 560, 430, .22 * v, .11); }, // tilli — crisp tak
-      s: (t, v) => { hiss(t, "highpass", 1800, .8, .7 * v, .045); tone(t, "square", 340, 300, .06 * v, .05); },  // open slap
-      j: (t, v) => { hiss(t, "bandpass", 7200, 7, .28 * v, .16); },                                            // ghungroo
-      X: (t, v) => { hiss(t, "highpass", 3500, .5, .45 * v, 1.4); tone(t, "sine", 120, 45, v, 1); }             // closing crash
+    const ping = (t, type, f0, f1, peak, decay) => {
+      const o = keep(ctx.createOscillator()); o.type = type;
+      o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + decay * .7);
+      o.connect(env(t, peak, .002, 0, decay)); o.start(t); o.stop(t + decay + .05);
     };
-    // One bar per tap, building up; the last tap plays the finale with a roll
-    const bars = [
-      "D..tD.t.",
-      "D.tDt.ts",
-      "DttDttDt",
-      "D.DtDtss"
+    // Dolu / tavil: a sharp stick crack on the right head, a deep open stroke on the left; jalra cymbals
+    const drum = {
+      T: (t, v) => { hiss(t, "highpass", 2400, .9, .6 * v, .05); ping(t, "triangle", 980, 760, .28 * v, .06); },
+      t: (t, v) => { hiss(t, "bandpass", 3000, 1.5, .32 * v, .035); },
+      B: (t, v) => { ping(t, "sine", 120, 58, .9 * v, .45); hiss(t, "lowpass", 300, .7, .3 * v, .04); },
+      X: (t, v) => { drum.B(t, v); drum.T(t, v); },
+      j: (t, v) => { hiss(t, "bandpass", 6800, 9, .3 * v, .22); ping(t, "square", 3100, 3000, .02 * v, .2); }
+    };
+    // Nadaswaram: a bright double-reed tone — sawtooth through reed formants, with vibrato and a slide into each note
+    const nada = (t, semis, dur, peak = .16, slide = true) => {
+      const f = SA * Math.pow(2, semis / 12);
+      const o = keep(ctx.createOscillator()); o.type = "sawtooth";
+      o.frequency.setValueAtTime(slide ? f * .94 : f, t);
+      if (slide) o.frequency.exponentialRampToValueAtTime(f, t + .06);
+      const lfo = keep(ctx.createOscillator()), depth = ctx.createGain();
+      lfo.frequency.value = 5.6; depth.gain.value = f * .007;
+      lfo.connect(depth).connect(o.frequency);
+      const f1 = ctx.createBiquadFilter(); f1.type = "bandpass"; f1.frequency.value = 1150; f1.Q.value = 1.4;
+      const f2 = ctx.createBiquadFilter(); f2.type = "peaking"; f2.frequency.value = 2600; f2.gain.value = 7; f2.Q.value = 1.2;
+      const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 4200;
+      o.connect(f1).connect(f2).connect(lp).connect(env(t, peak, .03, Math.max(.01, dur - .09), .08));
+      o.start(t); lfo.start(t); o.stop(t + dur + .15); lfo.stop(t + dur + .15);
+    };
+    // Mohanam: Sa Ri Ga Pa Dha (0 2 4 7 9), one phrase per tap — [note, eighths]
+    const phrases = [
+      [[0, 1], [2, 1], [4, 2]],
+      [[7, 1], [9, 1], [12, 2]],
+      [[12, 1], [14, 1], [12, 1], [9, 1]],
+      [[7, 1], [4, 1], [2, 1], [4, 1]]
     ];
-    const finale = ["DttDttDtDtDtDtDt", "tttttttttttttttt", "X......."];
-    const sixteenth = 60 / 172 / 4;
-    const play = (pattern, t0, isRoll) => {
-      [...pattern].forEach((ch, i) => {
-        const t = t0 + i * sixteenth, accent = i % 4 === 0 ? 1 : .72;
-        if (isRoll && ch === "t") return hit.t(t, .35 + .65 * i / 16);
-        if (hit[ch]) hit[ch](t, accent);
-        if (i % 4 === 0 && ch !== "X") hit.j(t, .9);
+    // Tavil patterns in sixteenths (half a bar per tap)
+    const rhythms = ["B.TTB.Tt", "BtTtB.TT", "BTtTBTTt", "BTTtBTTT"];
+    const s16 = beat / 4;
+    const bar = (rhythm, t0, accentEvery = 4) => {
+      [...rhythm].forEach((ch, i) => {
+        const t = t0 + i * s16, v = i % accentEvery === 0 ? 1 : .7;
+        if (drum[ch]) drum[ch](t, v);
+        if (i % 4 === 0) drum.j(t, .9);
       });
-      return t0 + pattern.length * sixteenth;
+      return t0 + rhythm.length * s16;
+    };
+    const melody = (phrase, t0) => {
+      let t = t0;
+      phrase.forEach(([n, len]) => { nada(t, n, len * beat / 2); t += len * beat / 2; });
+      return t;
+    };
+    // Gatti melam: the drum roll and high nadaswaram played as the mangalyam is tied
+    const gattiMelam = t0 => {
+      const len = beat * 4;
+      let t = t0;
+      melody([[12, 1], [14, 1], [12, 2]], t);                                // opening flourish
+      t = bar("BTtTBTTt", t);
+      // roll: ever-faster tavil strokes and jalra, nadaswaram trilling on high Sa
+      const rollEnd = t + len;
+      for (let x = t, k = 0; x < rollEnd; k++) {
+        const prog = (x - t) / len;
+        drum[k % 2 ? "t" : "T"](x, .45 + .55 * prog);
+        if (k % 6 === 0) drum.j(x, .9);
+        x += s16 * (1 - .55 * prog);
+      }
+      for (let x = t, k = 0; x < rollEnd - .05; k++) { nada(x, k % 2 ? 11 : 12, beat / 4, .15, false); x += beat / 4; }
+      // final stroke with a held high Sa
+      drum.X(rollEnd, 1); drum.j(rollEnd, 1); hiss(rollEnd, "highpass", 3500, .5, .4, 1.3);
+      nada(rollEnd, 12, beat * 2, .17);
+      return rollEnd + beat * 2;
     };
     return {
-      // Plays the bar for tap n (0–4); returns seconds until that phrase has finished
+      // Plays the phrase for tap n (0–4); returns seconds until it has finished
       tap(n) {
         try {
           init();
-          const now = ctx.currentTime + .02, start = Math.max(now, queueEnd);
-          let end = start;
-          if (n < 4) end = play(bars[n], start);
-          else finale.forEach((bar, i) => { end = play(bar, end, i === 1); });
-          if (n === 4) end += .4;  // let the crash ring out
+          const start = Math.max(ctx.currentTime + .02, queueEnd);
+          let end;
+          if (n < 4) { melody(phrases[n], start); end = bar(rhythms[n], start); }
+          else end = gattiMelam(start);
           queueEnd = end;
-          return end - ctx.currentTime;
+          return end - ctx.currentTime + .2;
         } catch (e) { return 1; }
       },
       stop() { voices.forEach(v => { try { v.stop(); } catch (e) {} }); voices = []; queueEnd = 0; }
@@ -415,8 +514,8 @@
     dots[beats++].classList.add("on");
     if (navigator.vibrate) navigator.vibrate(30);
     if (beats === 5) {
-      setTimeout(() => { flip.classList.add("flipped"); burst(40); }, 900);
-      // When the dhol finale has rung out, the background music returns
+      setTimeout(() => { flip.classList.add("flipped"); burst(40); }, 1400);
+      // When the gatti melam has rung out, the background music returns
       dholDone = setTimeout(releaseMusic, secs * 1000);
     }
   });

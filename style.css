@@ -150,12 +150,44 @@ img { display: block; max-width: 100%; }
 #gate.opening .tap-wrap, #gate.opening .beads { opacity: 0; }
 #gate.gone { display: none; }
 
+/* ---------- "Mana Pelli" title card, revealed in the doorway after Lord Ganesha ---------- */
+.pelli-intro {
+  position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; padding: 24px;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 46%, #fffaf0 0%, #fbefd3 45%, #f1d9a4 80%, #e2bd72 100%);
+  opacity: 0; transition: opacity .9s ease; perspective: 900px;
+}
+.pelli-text { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.pelli-text > * {
+  opacity: 0; transform: translate3d(0, 10px, -260px) scale(.55); filter: blur(10px);
+  transition: opacity 1.6s ease, transform 2s cubic-bezier(.16,.84,.3,1), filter 1.6s ease;
+}
+.pelli-title { font-family: var(--script); font-size: 76px; line-height: 1.05; color: var(--kumkum); text-shadow: 0 2px 0 rgba(233,200,115,.7), 0 8px 24px rgba(160,60,0,.18); }
+.pelli-orn { width: 190px; height: 48px; margin: 2px 0 6px; }
+.pelli-te { font-family: var(--telugu); font-size: 21px; line-height: 1.5; color: var(--maroon); }
+.pelli-en { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--gold-dk); margin-top: 6px; }
+#gate.opening .pelli-intro { opacity: 1; }
+/* step out of the doorway, one line after another */
+#gate.emerge .pelli-text > * { opacity: 1; transform: none; filter: none; }
+#gate.emerge .pelli-orn { transition-delay: .35s; }
+#gate.emerge .pelli-te { transition-delay: .6s; }
+#gate.emerge .pelli-en { transition-delay: .85s; }
+/* then drift up and fade away slowly */
+#gate.settle .pelli-text > * {
+  opacity: 0; transform: translate3d(0, -10px, 0) scale(1.03); filter: blur(2px);
+  transition: opacity 1.4s ease, transform 1.6s ease, filter 1.4s ease; transition-delay: 0s;
+}
+/* finally the whole scene cross-fades into the hero */
+#gate { transition: opacity 1.3s ease; }
+#gate.fade { opacity: 0; pointer-events: none; }
+@media (max-width: 360px) { .pelli-title { font-size: 62px; } .pelli-te, .pelli-en { font-size: 18px; } }
+
 /* ---------- Page ---------- */
 main {
   max-width: 480px; margin: 0 auto; background: var(--ivory);
   box-shadow: 0 0 60px rgba(0,0,0,.5); overflow: hidden; position: relative;
 }
-section { padding: 56px 24px; text-align: center; position: relative; }
+section { padding: 46px 24px; text-align: center; position: relative; }
 .eyebrow { font-family: var(--caps); font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
 .eyebrow.light { color: #ffe0a8; }
 .section-title { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 38px; color: var(--maroon); margin-top: 6px; }
@@ -194,7 +226,7 @@ body.modal-open { overflow: hidden; }
 .banana.flip-x { transform: scaleX(-1); }
 .hero-grid { display: grid; grid-template-columns: 50% 1fr; gap: 8px; padding: 14px 12px 0; align-items: end; }
 /* Couple cut-out standing in front of a mandapam arch, stepping out of its frame */
-.hero-photo { position: relative; aspect-ratio: 760 / 1133; }
+.hero-photo { position: relative; aspect-ratio: 759 / 1140; }
 .arch-bg {
   position: absolute; left: 4%; right: 4%; top: 12%; bottom: 3%;
   border-radius: 999px 999px 8px 8px; border: 2px solid var(--gold);
@@ -280,7 +312,8 @@ body.modal-open { overflow: hidden; }
 .tera-note { font-family: var(--telugu); font-size: 13px; color: var(--muted); margin: 10px auto 0; max-width: 300px; line-height: 1.6; }
 
 /* ---------- Festivities ---------- */
-.festivities { padding-top: 20px; }
+.festivities { padding-top: 20px; padding-bottom: 16px; }
+.event:last-child { padding-bottom: 6px; }
 .timeline { list-style: none; margin-top: 26px; text-align: left; position: relative; padding-left: 26px; }
 .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 30px; width: 1.5px; background: #eadcbc; }
 .timeline::after {
@@ -319,7 +352,7 @@ body.modal-open { overflow: hidden; }
 @keyframes wiggle { 50% { translate: 0 -4px; } }
 
 /* ---------- Sacred rituals: a lamp-lit path ---------- */
-.rituals { background: linear-gradient(#fbf6ec, #f8eedb); }
+.rituals { background: linear-gradient(#fbf6ec, #f8eedb); padding-top: 18px; }
 .rite-path { list-style: none; position: relative; margin-top: 30px; padding-left: 52px; text-align: left; }
 .rite-path::before, .rite-path::after {
   content: ""; position: absolute; left: 21px; top: 20px; bottom: 40px; width: 2px; border-radius: 2px;
@@ -613,3 +646,64 @@ input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,137,47,.
   .tera { display: none; }
   .tera-stage .big-name, .tera-stage .big-amp { transform: none; filter: none; }
 }
+
+/* ---------- Temple elements ---------- */
+/* Kanjivaram "temple" zari border: a row of gopuram teeth on a gold line */
+.temple-border {
+  position: absolute; left: 0; right: 0; height: 14px; pointer-events: none;
+  background:
+    conic-gradient(from 135deg at 50% 0, #e9c873 90deg, transparent 0) 0 3px / 16px 11px repeat-x,
+    linear-gradient(#e9c873, #e9c873) 0 0 / 100% 3px no-repeat;
+}
+.tb-top { top: 0; }
+.tb-bottom { bottom: 0; transform: scaleY(-1); }
+.countdown { position: relative; padding-top: 44px; padding-bottom: 40px; }
+/* brass temple bells swinging over the festivities */
+.festivities { position: relative; }
+.temple-bell { position: absolute; top: 0; width: 30px; height: 56px; transform-origin: 50% 0; animation: bellSwing 3.2s ease-in-out infinite; }
+.bell-l { left: 22px; }
+.bell-r { right: 22px; animation-delay: -1.6s; }
+@keyframes bellSwing { 0%, 100% { transform: rotate(7deg); } 50% { transform: rotate(-7deg); } }
+/* wedding mandap crowning the sacred rituals */
+.mandap { display: block; width: 62%; max-width: 230px; height: auto; margin: 0 auto 10px; filter: drop-shadow(0 10px 14px rgba(120,70,10,.25)); }
+/* kuthu vilakku lamps and the Tirumala namam in the blessing footer */
+.blessing { position: relative; overflow: hidden; padding-top: 58px; }
+.vilakku { position: absolute; bottom: 14px; width: 38px; height: 100px; filter: drop-shadow(0 0 10px rgba(255,180,70,.35)); }
+.vk-l { left: 12px; } .vk-r { right: 12px; }
+.vk-flame path { transform-box: fill-box; transform-origin: 50% 100%; animation: flicker 1.2s ease-in-out infinite alternate; }
+.vk-flame path:nth-child(2) { animation-delay: -.5s; } .vk-flame path:nth-child(3) { animation-delay: -.9s; }
+.namam { display: block; width: 150px; height: 66px; margin: 0 auto 4px; }
+@media (prefers-reduced-motion: reduce) { .temple-bell { animation: none; } }
+
+/* ---------- Sacred ritual detail card ---------- */
+.rite-card { cursor: pointer; -webkit-tap-highlight-color: transparent; transition: box-shadow .6s ease, transform .2s ease; }
+.rite-card:active { transform: scale(.98); }
+.rite-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.r-more {
+  display: inline-block; margin-top: 10px; font-family: var(--caps); font-size: 9.5px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--kumkum); opacity: .8;
+}
+.rite.lit .r-more { opacity: 1; }
+.rcard-rite {
+  aspect-ratio: auto; width: min(360px, 92vw); max-height: 88vh; display: flex; flex-direction: column;
+  background: #fffaf0; border-radius: 18px; animation: none;
+  box-shadow: 0 0 0 1px #ead9b6, 0 0 0 6px #fffaf0, 0 0 0 7px rgba(184,137,47,.6), 0 26px 60px rgba(0,0,0,.5);
+}
+.rd-scroll { overflow-y: auto; padding: 16px 18px 10px; text-align: center; overscroll-behavior: contain; }
+.rd-art { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 0 2px #e9c873, 0 8px 16px rgba(120,70,10,.18); }
+.rd-num { font-family: var(--caps); font-size: 10px; letter-spacing: .26em; color: var(--gold); margin-top: 14px; }
+.rd-tel { font-family: var(--telugu); font-weight: 400; font-size: 29px; line-height: 1.35; color: var(--kumkum); margin-top: 2px; }
+.rd-en { font-family: var(--caps); font-weight: 600; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-dk); }
+.rd-mean { font-style: italic; font-size: 18px; color: var(--maroon); margin-top: 8px; }
+.rd-p { text-align: left; font-size: 15.5px; line-height: 1.55; color: var(--ink); margin-top: 10px; }
+.rd-p i { color: var(--maroon); }
+.rd-when { text-align: left; margin-top: 14px; padding: 9px 12px; border-radius: 10px; background: #fbeccb; font-size: 14.5px; line-height: 1.4; color: var(--ink); }
+.rd-when span { display: block; font-family: var(--caps); font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--kumkum); margin-bottom: 2px; }
+.rd-nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-top: 1px solid #ead9b6; background: #fff6e2; }
+.rd-btn { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--gold); background: #fffaf0; color: var(--kumkum); font-size: 26px; line-height: 1; }
+.rd-btn:active { transform: scale(.92); }
+.rd-count { font-family: var(--caps); font-size: 11px; letter-spacing: .24em; color: var(--muted); }
+
+/* Cocktails & Dance card: the couple cut-out on a festive glow, framed to their faces */
+.rc-couple { aspect-ratio: 4 / 3.3; background: radial-gradient(circle at 50% 30%, #fff3e0, #f6d6c8 45%, #e9b98f 80%, #c98a4f); }
+.rc-couple img { object-fit: cover; object-position: 50% 6%; }

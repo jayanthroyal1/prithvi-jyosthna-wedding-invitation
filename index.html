@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=24">
 </head>
 <body class="locked">
 
@@ -34,6 +34,15 @@
 
   <!-- ============ ENVELOPE ============ -->
   <section id="gate" aria-label="Wedding invitation envelope">
+    <!-- Seen through the opening doors: the title steps out of the doorway, then fades into the invite -->
+    <div class="pelli-intro" aria-hidden="true">
+      <div class="pelli-text">
+        <p class="pelli-title">Mana Pelli</p>
+        <svg class="pelli-orn" viewBox="0 0 220 60"><use href="#muggu"/></svg>
+        <p class="pelli-te">రెండు మనసులు · ఒక అందమైన ప్రయాణం</p>
+        <p class="pelli-en">Two hearts, one beautiful journey</p>
+      </div>
+    </div>
     <div class="beads" aria-hidden="true"></div>
     <div class="door door-l" aria-hidden="true"></div>
     <div class="door door-r" aria-hidden="true"></div>
@@ -71,7 +80,7 @@
       <div class="hero-grid">
         <figure class="hero-photo reveal">
           <div class="arch-bg" aria-hidden="true"><span class="arch-garland"></span></div>
-          <img class="couple-cut" src="assets/img/couple-hero.webp" alt="Prithvi and Jyosthna in traditional South Indian wedding attire" data-parallax="0.04">
+          <img class="couple-cut" src="assets/img/couple-hero.webp?v=3" alt="Prithvi and Jyosthna in traditional South Indian wedding attire" data-parallax="0.04">
           <span class="arch-floor" aria-hidden="true"></span>
         </figure>
         <div class="hero-text reveal">
@@ -134,6 +143,8 @@
 
     <!-- ============ FESTIVITIES ============ -->
     <section class="festivities">
+      <svg class="temple-bell bell-l" viewBox="0 0 40 74" aria-hidden="true"><use href="#bell"/></svg>
+      <svg class="temple-bell bell-r" viewBox="0 0 40 74" aria-hidden="true"><use href="#bell"/></svg>
       <p class="eyebrow reveal">Two days of celebration</p>
       <h2 class="section-title reveal">The Festivities</h2>
       <p class="tel-eyebrow reveal">పెళ్లి వేడుకలు</p>
@@ -175,6 +186,7 @@
 
     <!-- ============ SACRED RITUALS ============ -->
     <section class="rituals">
+      <img class="mandap reveal" src="assets/img/mandap.webp" alt="" aria-hidden="true">
       <p class="eyebrow reveal">A Telugu Vivaha Mahotsavam</p>
       <h2 class="section-title reveal">The Sacred Rituals</h2>
       <p class="tel-eyebrow reveal">కళ్యాణ వైభోగమే</p>
@@ -182,83 +194,202 @@
       <ol class="rite-path" id="ritePath">
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౧</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Snathakam — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4c4 5 8 6 12 4M6 4c1 6 4 11 12 16"/><circle cx="18" cy="8" r="1.6"/><path d="M8 12c3 1 6 1 9-1"/></svg></span>
             <p class="r-tel">స్నాతకం</p>
             <h3>Snathakam</h3>
             <p class="r-desc">The groom completes his student life, takes the sacred thread and is blessed to enter married life.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Snathakam"><rect width="240" height="150" rx="14" fill="url(#riBg)"/><path d="M88.0 132.0L96.0 112H144.0L152.0 132.0Z" fill="#b5532a"/><path d="M92.0 122.0H148.0M108.0 112V132.0M132.0 112V132.0" stroke="#8a3a1a" stroke-width="1.2"/><rect x="92.0" y="108.0" width="56.0" height="5.0" rx="2" fill="url(#riGold)"/><path d="M120 106.0c-10.0 -8.0 -10.0 -20.0 0 -34.0c10.0 14.0 10.0 26.0 0 34.0Z" fill="url(#riFire)"/><path d="M106.0 108.0c-6.0 -5.0 -6.0 -12.0 0 -20.0c6.0 8.0 6.0 15.0 0 20.0Z" fill="url(#riFire)"/><path d="M134.0 108.0c-6.0 -5.0 -6.0 -12.0 0 -20.0c6.0 8.0 6.0 15.0 0 20.0Z" fill="url(#riFire)"/>
+  <ellipse cx="52" cy="80" rx="21" ry="34" transform="rotate(-18 52 80)" fill="none" stroke="#f3e2a6" stroke-width="3.4"/>
+  <ellipse cx="52" cy="80" rx="18" ry="31" transform="rotate(-18 52 80)" fill="none" stroke="#e9c873" stroke-width="1"/>
+  <circle cx="64" cy="48" r="4.5" fill="#f3e2a6" stroke="#c8962f"/>
+  <ellipse cx="190" cy="112" rx="20" ry="17" fill="url(#riGold)"/><rect x="182" y="88" width="16" height="11" rx="2" fill="url(#riGold)"/>
+  <path d="M208 106q14-6 16-20" stroke="#c8962f" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M181 92q9-20 18 0" stroke="#c8962f" stroke-width="3" fill="none"/>
+  <g stroke="#5f9e36" stroke-width="2" stroke-linecap="round" fill="none"><path d="M72 138q4-18 2-32M78 138q2-16 8-28M84 138q-2-14 2-24"/></g></svg>
+              <p class="rd-mean">The ceremonial bath that closes student life</p>
+              <p class="rd-p">Snathakam (from <i>snanam</i>, the ritual bath) marks the end of the groom’s brahmacharya — his years of Vedic study — and his readiness to become a grihastha, a householder.</p>
+              <p class="rd-p">After the bath and a small homam, the purohit invests him with a new yajnopavitam (sacred thread) and the elders bless him to enter married life.</p>
+              <p class="rd-when"><span>When</span>Morning of the wedding, at the groom’s side</p>
+            </template>
           </article>
         </li>
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౨</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Kashi Yatra — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0Z"/><path d="M12 12v7a2 2 0 0 1-4 0"/><path d="M12 3v1"/></svg></span>
             <p class="r-tel">కాశీ యాత్ర</p>
             <h3>Kashi Yatra</h3>
             <p class="r-desc">The groom sets off for Kashi with umbrella and staff — until the bride’s brother persuades him to marry.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Kashi Yatra"><rect width="240" height="150" rx="14" fill="url(#riBg)"/>
+  <path d="M10 130H230" stroke="#e2c98f" stroke-width="2"/>
+  <path d="M40 72Q90 18 140 72Z" fill="url(#riRed)"/>
+  <path d="M40 72q8.3 9 16.6 0q8.3 9 16.6 0q8.3 9 16.6 0q8.3 9 16.6 0q8.3 9 16.6 0q8.3 9 16.6 0" fill="#f3d27a"/>
+  <g stroke="#f3d27a" stroke-width="1" opacity=".7"><path d="M90 34L57 72M90 34L73 72M90 34L90 72M90 34L107 72M90 34L123 72"/></g>
+  <circle cx="90" cy="32" r="4" fill="url(#riGold)"/>
+  <path d="M90 76V124q0 8-8 8" stroke="#7a4d0e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M158 40L174 128" stroke="#8a5a16" stroke-width="4.5" stroke-linecap="round"/><circle cx="157" cy="38" r="5" fill="url(#riGold)"/>
+  <path d="M205 86L186 56A34 34 0 0 1 224 56Z" fill="#e8c46a" stroke="#c8962f"/>
+  <g stroke="#b88a2c" stroke-width=".9"><path d="M205 86L193 50M205 86L205 48M205 86L217 50"/></g>
+  <path d="M205 86V112" stroke="#8a5a16" stroke-width="3.2" stroke-linecap="round"/>
+  <g transform="translate(196 124) rotate(-12)"><ellipse rx="8" ry="14" fill="#a0632a"/><circle cy="-5" r="2.6" fill="#e9c873"/></g>
+  <g transform="translate(220 126) rotate(8)"><ellipse rx="8" ry="14" fill="#a0632a"/><circle cy="-5" r="2.6" fill="#e9c873"/></g></svg>
+              <p class="rd-mean">The pretend pilgrimage to Kashi</p>
+              <p class="rd-p">Fresh from his studies, the groom playfully announces that he will give up worldly life and leave for Kashi (Varanasi) to keep learning. He sets off dressed for the journey — umbrella, walking stick, hand-fan and padukalu (wooden sandals).</p>
+              <p class="rd-p">The bride’s brother stops him on the way and persuades him to marry his sister instead. The groom agrees, the brother is honoured with a gift, and the procession turns back — one of the most light-hearted moments of a Telugu wedding.</p>
+              <p class="rd-when"><span>When</span>Right after Snathakam</p>
+            </template>
           </article>
         </li>
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౩</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Edurukolu — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6c0 7 4 11 8 11s8-4 8-11"/><circle cx="6" cy="11" r="1.3"/><circle cx="9" cy="14.5" r="1.3"/><circle cx="12" cy="16" r="1.3"/><circle cx="15" cy="14.5" r="1.3"/><circle cx="18" cy="11" r="1.3"/></svg></span>
             <p class="r-tel">ఎదురుకోలు</p>
             <h3>Edurukolu</h3>
             <p class="r-desc">The two families come face to face and welcome each other with music, flowers and joy.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Edurukolu"><rect width="240" height="150" rx="14" fill="url(#riBg)"/><circle cx="24.0" cy="34.0" r="4.2" fill="#ef7d14" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="31.7" cy="38.5" r="4.2" fill="#fffdf6" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="39.4" cy="42.5" r="4.2" fill="#c0392b" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="47.0" cy="46.2" r="4.2" fill="#f2b51d" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="54.7" cy="49.6" r="4.2" fill="#ef7d14" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="62.4" cy="52.6" r="4.2" fill="#fffdf6" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="70.1" cy="55.2" r="4.2" fill="#c0392b" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="77.8" cy="57.4" r="4.2" fill="#f2b51d" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="85.4" cy="59.2" r="4.2" fill="#ef7d14" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="93.1" cy="60.7" r="4.2" fill="#fffdf6" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="100.8" cy="61.8" r="4.2" fill="#c0392b" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="108.5" cy="62.6" r="4.2" fill="#f2b51d" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="116.2" cy="63.0" r="4.2" fill="#ef7d14" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="123.8" cy="63.0" r="4.2" fill="#fffdf6" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="131.5" cy="62.6" r="4.2" fill="#c0392b" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="139.2" cy="61.8" r="4.2" fill="#f2b51d" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="146.9" cy="60.7" r="4.2" fill="#ef7d14" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="154.6" cy="59.2" r="4.2" fill="#fffdf6" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="162.2" cy="57.4" r="4.2" fill="#c0392b" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="169.9" cy="55.2" r="4.2" fill="#f2b51d" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="177.6" cy="52.6" r="4.2" fill="#ef7d14" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="185.3" cy="49.6" r="4.2" fill="#fffdf6" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="193.0" cy="46.2" r="4.2" fill="#c0392b" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="200.6" cy="42.5" r="4.2" fill="#f2b51d" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="208.3" cy="38.5" r="4.2" fill="#ef7d14" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><circle cx="216.0" cy="34.0" r="4.2" fill="#fffdf6" stroke="rgba(120,60,0,.25)" stroke-width=".6"/><ellipse cx="62" cy="122" rx="38" ry="9" fill="url(#riGold)"/><g transform="translate(50 120) rotate(-55) scale(0.8)"><path d="M0 0C-14-6-16-26 0-38C16-26 14-6 0 0Z" fill="#4f8a2c"/><path d="M0-2V-34" stroke="#8cc063" stroke-width="1.2"/></g><g transform="translate(72 120) rotate(40) scale(0.8)"><path d="M0 0C-14-6-16-26 0-38C16-26 14-6 0 0Z" fill="#4f8a2c"/><path d="M0-2V-34" stroke="#8cc063" stroke-width="1.2"/></g><circle cx="62" cy="110" r="12" fill="#8a5a2b"/><circle cx="57.8" cy="105.8" r="4.199999999999999" fill="#b07a42" opacity=".7"/><path d="M62 98c-3-6-1-10 3-12M62 98c2-6 6-8 10-7" stroke="#6a8a2a" stroke-width="1.6" fill="none"/><circle cx="40" cy="117" r="5" fill="#c8102e"/><circle cx="86" cy="117" r="5" fill="#f2c230"/><ellipse cx="178" cy="122" rx="38" ry="9" fill="url(#riGold)"/><g transform="translate(190 120) rotate(55) scale(0.8)"><path d="M0 0C-14-6-16-26 0-38C16-26 14-6 0 0Z" fill="#4f8a2c"/><path d="M0-2V-34" stroke="#8cc063" stroke-width="1.2"/></g><g transform="translate(168 120) rotate(-40) scale(0.8)"><path d="M0 0C-14-6-16-26 0-38C16-26 14-6 0 0Z" fill="#4f8a2c"/><path d="M0-2V-34" stroke="#8cc063" stroke-width="1.2"/></g><circle cx="178" cy="110" r="12" fill="#8a5a2b"/><circle cx="173.8" cy="105.8" r="4.199999999999999" fill="#b07a42" opacity=".7"/><path d="M178 98c-3-6-1-10 3-12M178 98c2-6 6-8 10-7" stroke="#6a8a2a" stroke-width="1.6" fill="none"/><circle cx="200" cy="117" r="5" fill="#c8102e"/><circle cx="154" cy="117" r="5" fill="#f2c230"/>
+  <g fill="#c8962f" opacity=".8"><path d="M112 70l8-10 8 10-8 10Z"/></g></svg>
+              <p class="rd-mean">Welcoming each other, face to face</p>
+              <p class="rd-p">The bride’s family goes forward to receive the groom and his family. The two families stand face to face, exchange garlands and tamboolam (betel leaves, nuts and fruit), and welcome each other to the sound of the nadaswaram.</p>
+              <p class="rd-p">Gentle teasing between the two sides is part of the fun — it is the moment two families begin to become one.</p>
+              <p class="rd-when"><span>When</span>When the groom’s family arrives at the venue</p>
+            </template>
           </article>
         </li>
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౪</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Kanyadanam — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 8h8l-1 2c3 1.5 4 4 4 6.5S16.5 21 12 21s-7-2-7-4.5S6 11.5 9 10Z"/><path d="M12 8c-2-3-5-4-7-3M12 8c2-3 5-4 7-3M12 8V4"/></svg></span>
             <p class="r-tel">కన్యాదానం</p>
             <h3>Kanyadanam</h3>
             <p class="r-desc">The bride’s parents place her hand in the groom’s, praying for her lifelong happiness.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Kanyadanam"><rect width="240" height="150" rx="14" fill="url(#riBg)"/>
+  <g transform="translate(70 58) rotate(38)"><ellipse rx="22" ry="19" fill="url(#riGold)"/><rect x="-9" y="-30" width="18" height="12" rx="2" fill="url(#riGold)"/>
+    <path d="M-12-30C-20-46 4-52 0-30M12-30C20-46-4-52 0-30" fill="#4f8a2c"/><path d="M-22 0H22" stroke="#c8102e" stroke-width="3"/></g>
+  <path d="M92 50C110 58 122 74 124 92" stroke="#7ec3e8" stroke-width="5" fill="none" stroke-linecap="round" opacity=".9"/>
+  <g fill="#7ec3e8" opacity=".85"><circle cx="118" cy="98" r="2"/><circle cx="132" cy="96" r="1.6"/><circle cx="112" cy="102" r="1.4"/></g><g transform="translate(110 132) rotate(-70) scale(1)"><path d="M0 0C-14-6-16-26 0-38C16-26 14-6 0 0Z" fill="#4f8a2c"/><path d="M0-2V-34" stroke="#8cc063" stroke-width="1.2"/></g><g transform="translate(150 132) rotate(70) scale(1)"><path d="M0 0C-14-6-16-26 0-38C16-26 14-6 0 0Z" fill="#4f8a2c"/><path d="M0-2V-34" stroke="#8cc063" stroke-width="1.2"/></g><circle cx="130" cy="112" r="16" fill="#8a5a2b"/><circle cx="124.4" cy="106.4" r="5.6" fill="#b07a42" opacity=".7"/><path d="M130 96c-3-6-1-10 3-12M130 96c2-6 6-8 10-7" stroke="#6a8a2a" stroke-width="1.6" fill="none"/>
+  <g><circle cx="160" cy="124" r="4" fill="#c0392b"/><circle cx="100" cy="126" r="4" fill="#fffdf6"/><circle cx="168" cy="112" r="3.4" fill="#ef7d14"/><circle cx="94" cy="114" r="3.4" fill="#f2b51d"/></g></svg>
+              <p class="rd-mean">The gift of the daughter</p>
+              <p class="rd-p">Regarded as the greatest of all danams (gifts), Kanyadanam is performed by the bride’s parents. They place her hand — holding a coconut — in the groom’s hand and pour sacred water over their hands as the mantras are chanted.</p>
+              <p class="rd-p">The groom vows <i>“Dharme cha, arthe cha, kame cha, naticharami”</i> — that in dharma, in wealth and in desire, he will never go against her.</p>
+              <p class="rd-when"><span>When</span>Under the mandapam, before the muhurtham</p>
+            </template>
           </article>
         </li>
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౫</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Jeelakarra Bellam — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="7" height="7" rx="1.5"/><path d="M15 8c2 1 3 3 2.5 6M18 6c1.5 1.5 2 3.5 1.5 5.5M14 13c1.5.5 2.5 2 2.5 4"/></svg></span>
             <p class="r-tel">జీలకర్ర బెల్లం</p>
             <h3>Jeelakarra Bellam</h3>
             <p class="r-desc">At the muhurtham the tera is lowered and the couple place cumin and jaggery on each other’s head.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Jeelakarra Bellam"><rect width="240" height="150" rx="14" fill="url(#riBg)"/>
+  <path d="M40 16H200V58Q120 78 40 58Z" fill="url(#riRed)"/>
+  <path d="M40 58Q120 78 200 58" stroke="#e9c873" stroke-width="3" fill="none"/><path d="M40 16H200" stroke="#e9c873" stroke-width="3"/>
+  <text x="120" y="47" text-anchor="middle" font-family="Potti Sreeramulu, Noto Sans Telugu, sans-serif" font-size="20" fill="#ffd36b">శ్రీ</text>
+  <path d="M120 140C92 132 86 104 120 92C154 104 148 132 120 140Z" fill="#4f8a2c"/><path d="M120 138V96" stroke="#8cc063" stroke-width="1.2"/>
+  <circle cx="120" cy="118" r="13" fill="#8b5a2b"/><circle cx="116" cy="114" r="4" fill="#a8743a" opacity=".7"/><ellipse cx="113.0" cy="111.9" rx="2.4" ry=".9" transform="rotate(166 120 120)" fill="#5a4628"/><ellipse cx="101.9" cy="129.4" rx="2.4" ry=".9" transform="rotate(24 120 120)" fill="#5a4628"/><ellipse cx="114.6" cy="109.5" rx="2.4" ry=".9" transform="rotate(129 120 120)" fill="#5a4628"/><ellipse cx="108.6" cy="110.2" rx="2.4" ry=".9" transform="rotate(107 120 120)" fill="#5a4628"/><ellipse cx="102.8" cy="110.4" rx="2.4" ry=".9" transform="rotate(108 120 120)" fill="#5a4628"/><ellipse cx="102.4" cy="122.7" rx="2.4" ry=".9" transform="rotate(57 120 120)" fill="#5a4628"/><ellipse cx="125.2" cy="123.2" rx="2.4" ry=".9" transform="rotate(15 120 120)" fill="#5a4628"/><ellipse cx="123.1" cy="118.3" rx="2.4" ry=".9" transform="rotate(56 120 120)" fill="#5a4628"/><ellipse cx="101.9" cy="130.3" rx="2.4" ry=".9" transform="rotate(74 120 120)" fill="#5a4628"/><ellipse cx="116.8" cy="122.1" rx="2.4" ry=".9" transform="rotate(146 120 120)" fill="#5a4628"/><ellipse cx="112.3" cy="129.2" rx="2.4" ry=".9" transform="rotate(46 120 120)" fill="#5a4628"/><ellipse cx="104.1" cy="122.9" rx="2.4" ry=".9" transform="rotate(48 120 120)" fill="#5a4628"/><ellipse cx="114.9" cy="122.2" rx="2.4" ry=".9" transform="rotate(16 120 120)" fill="#5a4628"/><ellipse cx="122.6" cy="124.1" rx="2.4" ry=".9" transform="rotate(127 120 120)" fill="#5a4628"/><ellipse cx="127.2" cy="119.1" rx="2.4" ry=".9" transform="rotate(80 120 120)" fill="#5a4628"/><ellipse cx="118.6" cy="132.0" rx="2.4" ry=".9" transform="rotate(92 120 120)" fill="#5a4628"/><ellipse cx="112.0" cy="128.7" rx="2.4" ry=".9" transform="rotate(178 120 120)" fill="#5a4628"/><ellipse cx="131.2" cy="110.1" rx="2.4" ry=".9" transform="rotate(76 120 120)" fill="#5a4628"/></svg>
+              <p class="rd-mean">Cumin and jaggery — the muhurtham itself</p>
+              <p class="rd-p">Until this moment the bride and groom sit on either side of a tera, a cloth screen, without seeing each other. At the exact muhurtham, as the purohit chants, the tera is lowered and they place a paste of jeelakarra (cumin) and bellam (jaggery) on the crown of each other’s head.</p>
+              <p class="rd-p">Cumin is bitter and jaggery is sweet; together they stand for a bond that holds through every bitter and sweet moment of life. In Telugu weddings this is the most auspicious moment of all.</p>
+              <p class="rd-when"><span>When</span>At the muhurtham — 7:49 AM CST, Saturday 19 December 2026</p>
+            </template>
           </article>
         </li>
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౬</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Mangalya Dharana — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4c0 8 3.5 12 8 12s8-4 8-12"/><circle cx="10" cy="18.5" r="2"/><circle cx="14" cy="18.5" r="2"/></svg></span>
             <p class="r-tel">మాంగల్య ధారణ</p>
             <h3>Mangalya Dharana</h3>
             <p class="r-desc">The groom ties the mangalasutram as “Mangalyam tantunanena” is chanted.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Mangalya Dharana"><rect width="240" height="150" rx="14" fill="url(#riBg)"/>
+  <path d="M62 26C62 112 178 112 178 26" stroke="#f2c230" stroke-width="3.4" fill="none"/>
+  <path d="M62 26C62 112 178 112 178 26" stroke="#d9a015" stroke-width="1" fill="none" stroke-dasharray="3 4"/>
+  <g fill="#f2c230" stroke="#c8962f" stroke-width=".8"><circle cx="66" cy="44" r="3.4"/><circle cx="64" cy="34" r="3.4"/><circle cx="174" cy="40" r="3.4"/></g>
+  <g><circle cx="108" cy="100" r="12" fill="url(#riGold)" stroke="#a8721e"/><circle cx="108" cy="100" r="7" fill="none" stroke="#a8721e" stroke-width=".8"/><circle cx="108" cy="100" r="2.4" fill="#c8102e"/>
+     <circle cx="132" cy="100" r="12" fill="url(#riGold)" stroke="#a8721e"/><circle cx="132" cy="100" r="7" fill="none" stroke="#a8721e" stroke-width=".8"/><circle cx="132" cy="100" r="2.4" fill="#c8102e"/></g>
+  <g fill="#fffdf6" stroke="#e2cfa6" stroke-width=".6"><circle cx="40" cy="120" r="4"/><circle cx="50" cy="128" r="4"/><circle cx="200" cy="118" r="4"/><circle cx="190" cy="128" r="4"/></g>
+  <g fill="#c0392b"><circle cx="30" cy="110" r="3.6"/><circle cx="210" cy="108" r="3.6"/></g></svg>
+              <p class="rd-mean">Tying the mangalasutram</p>
+              <p class="rd-p">The groom ties the mangalasutram around the bride’s neck with three knots, while the gatti melam — a crescendo of nadaswaram and drums — fills the hall. In Telugu tradition it is a turmeric-coated thread carrying two gold discs (sutralu), one from each family.</p>
+              <p class="rd-p">The mantra: <i>“Mangalyam tantunanena mama jeevana hetuna, kanthe badhnami subhage, tvam jeeva saradam satam”</i> — “This sacred thread is the very cause of my life. I tie it around your neck, O auspicious one; may you live a hundred years.”</p>
+              <p class="rd-when"><span>When</span>Right after Jeelakarra Bellam</p>
+            </template>
           </article>
         </li>
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౭</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Talambralu — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="7" cy="8" rx="1.2" ry="2.4" transform="rotate(30 7 8)"/><ellipse cx="13" cy="6" rx="1.2" ry="2.4" transform="rotate(-20 13 6)"/><ellipse cx="17" cy="11" rx="1.2" ry="2.4" transform="rotate(50 17 11)"/><ellipse cx="9" cy="14" rx="1.2" ry="2.4" transform="rotate(-40 9 14)"/><ellipse cx="14" cy="17" rx="1.2" ry="2.4" transform="rotate(15 14 17)"/><circle cx="6" cy="19" r="1"/><circle cx="18" cy="18" r="1"/></svg></span>
             <p class="r-tel">తలంబ్రాలు</p>
             <h3>Talambralu</h3>
             <p class="r-desc">Bride and groom shower each other with turmeric rice and pearls, wishing each other abundance.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Talambralu"><rect width="240" height="150" rx="14" fill="url(#riBg)"/><circle cx="20.0" cy="72.5" r="2.2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><ellipse cx="25.3" cy="68.0" rx="2.6" ry="1.2" transform="rotate(114 25.3 68.0)" fill="#f2c230"/><ellipse cx="30.7" cy="53.0" rx="2.6" ry="1.2" transform="rotate(18 30.7 53.0)" fill="#f2c230"/><ellipse cx="36.0" cy="44.1" rx="2.6" ry="1.2" transform="rotate(107 36.0 44.1)" fill="#f2c230"/><circle cx="41.3" cy="39.0" r="2.2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><ellipse cx="46.7" cy="36.8" rx="2.6" ry="1.2" transform="rotate(125 46.7 36.8)" fill="#f2c230"/><ellipse cx="52.0" cy="34.7" rx="2.6" ry="1.2" transform="rotate(171 52.0 34.7)" fill="#f2c230"/><ellipse cx="57.3" cy="29.1" rx="2.6" ry="1.2" transform="rotate(142 57.3 29.1)" fill="#f2c230"/><circle cx="62.7" cy="35.1" r="2.2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><ellipse cx="68.0" cy="40.2" rx="2.6" ry="1.2" transform="rotate(80 68.0 40.2)" fill="#f2c230"/><ellipse cx="73.3" cy="36.7" rx="2.6" ry="1.2" transform="rotate(89 73.3 36.7)" fill="#f2c230"/><ellipse cx="78.7" cy="44.1" rx="2.6" ry="1.2" transform="rotate(148 78.7 44.1)" fill="#f2c230"/><circle cx="84.0" cy="52.3" r="2.2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><ellipse cx="89.3" cy="50.4" rx="2.6" ry="1.2" transform="rotate(23 89.3 50.4)" fill="#f2c230"/><ellipse cx="94.7" cy="68.8" rx="2.6" ry="1.2" transform="rotate(121 94.7 68.8)" fill="#f2c230"/><ellipse cx="100.0" cy="74.6" rx="2.6" ry="1.2" transform="rotate(16 100.0 74.6)" fill="#f2c230"/><circle cx="220.0" cy="66.9" r="2.2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><ellipse cx="214.7" cy="65.9" rx="2.6" ry="1.2" transform="rotate(165 214.7 65.9)" fill="#f2c230"/><ellipse cx="209.3" cy="56.5" rx="2.6" ry="1.2" transform="rotate(174 209.3 56.5)" fill="#f2c230"/><ellipse cx="204.0" cy="52.6" rx="2.6" ry="1.2" transform="rotate(72 204.0 52.6)" fill="#f2c230"/><circle cx="198.7" cy="45.6" r="2.2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><ellipse cx="193.3" cy="43.3" rx="2.6" ry="1.2" transform="rotate(88 193.3 43.3)" fill="#f2c230"/><ellipse cx="188.0" cy="30.0" rx="2.6" ry="1.2" transform="rotate(118 188.0 30.0)" fill="#f2c230"/><ellipse cx="182.7" cy="32.5" rx="2.6" ry="1.2" transform="rotate(156 182.7 32.5)" fill="#f2c230"/><circle cx="177.3" cy="29.6" r="2.2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><ellipse cx="172.0" cy="30.4" rx="2.6" ry="1.2" transform="rotate(73 172.0 30.4)" fill="#f2c230"/><ellipse cx="166.7" cy="34.2" rx="2.6" ry="1.2" transform="rotate(63 166.7 34.2)" fill="#f2c230"/><ellipse cx="161.3" cy="41.8" rx="2.6" ry="1.2" transform="rotate(127 161.3 41.8)" fill="#f2c230"/><circle cx="156.0" cy="43.7" r="2.2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><ellipse cx="150.7" cy="54.9" rx="2.6" ry="1.2" transform="rotate(140 150.7 54.9)" fill="#f2c230"/><ellipse cx="145.3" cy="60.8" rx="2.6" ry="1.2" transform="rotate(35 145.3 60.8)" fill="#f2c230"/><ellipse cx="140.0" cy="76.1" rx="2.6" ry="1.2" transform="rotate(140 140.0 76.1)" fill="#f2c230"/>
+  <path d="M84 112Q120 82 156 112Z" fill="#f2c230"/><circle cx="110.3" cy="103.0" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><circle cx="113.8" cy="108.6" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><circle cx="140.1" cy="99.8" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><circle cx="105.8" cy="100.8" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><circle cx="108.3" cy="103.8" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><circle cx="123.9" cy="101.2" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><circle cx="98.2" cy="103.0" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><circle cx="114.2" cy="104.8" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/><circle cx="139.9" cy="106.3" r="2" fill="#fffdf6" stroke="#e2cfa6" stroke-width=".5"/>
+  <path d="M78 112H162Q156 140 120 140Q84 140 78 112Z" fill="url(#riGold)"/><ellipse cx="120" cy="112" rx="42" ry="5" fill="#d9a441"/></svg>
+              <p class="rd-mean">Showering each other with rice</p>
+              <p class="rd-p">The bride and groom take handfuls of akshintalu — rice coloured with turmeric, sometimes mixed with pearls (<i>mutyala talambralu</i>) — and shower them over each other’s heads, again and again, cheered on by both families.</p>
+              <p class="rd-p">It soon becomes a joyful contest. The rice stands for abundance and prosperity, wishing the couple a home that never lacks anything.</p>
+              <p class="rd-when"><span>When</span>After Mangalya Dharana</p>
+            </template>
           </article>
         </li>
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౮</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Saptapadi — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4c2 0 3 2 3 5s-1 5-3 5-3-2-3-5 1-5 3-5ZM16 10c2 0 3 2 3 5s-1 5-3 5-3-2-3-5 1-5 3-5Z"/><path d="M7 16.5v1.5M17 21.5v.5"/></svg></span>
             <p class="r-tel">సప్తపది</p>
             <h3>Saptapadi</h3>
             <p class="r-desc">Seven steps around the sacred fire, each one a vow for the life they share.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Saptapadi"><rect width="240" height="150" rx="14" fill="url(#riBg)"/><path d="M91.2 130.0L98.4 112H141.6L148.8 130.0Z" fill="#b5532a"/><path d="M94.8 121.0H145.2M109.2 112V130.0M130.8 112V130.0" stroke="#8a3a1a" stroke-width="1.2"/><rect x="94.8" y="108.4" width="50.4" height="4.5" rx="2" fill="url(#riGold)"/><path d="M120 106.6c-9.0 -7.2 -9.0 -18.0 0 -30.6c9.0 12.6 9.0 23.400000000000002 0 30.6Z" fill="url(#riFire)"/><path d="M107.4 108.4c-5.4 -4.5 -5.4 -10.8 0 -18.0c5.4 7.2 5.4 13.5 0 18.0Z" fill="url(#riFire)"/><path d="M132.6 108.4c-5.4 -4.5 -5.4 -10.8 0 -18.0c5.4 7.2 5.4 13.5 0 18.0Z" fill="url(#riFire)"/><g transform="translate(30.5 111.7) rotate(-110.0)" fill="#c8102e"><ellipse rx="4.6" ry="8.4"/><circle cx="4.0" cy="-13.1" r="1.9"/><circle cx="1.9" cy="-11.7" r="1.4"/><circle cx="-0.2" cy="-11.7" r="1.4"/><circle cx="-2.3" cy="-11.1" r="1.4"/><circle cx="-4.4" cy="-10.5" r="1.4"/></g><g transform="translate(34.9 82.8) rotate(-73.3)" fill="#c8102e"><ellipse rx="4.6" ry="8.4"/><circle cx="-4.0" cy="-13.1" r="1.9"/><circle cx="-1.9" cy="-11.7" r="1.4"/><circle cx="0.2" cy="-11.7" r="1.4"/><circle cx="2.3" cy="-11.1" r="1.4"/><circle cx="4.4" cy="-10.5" r="1.4"/></g><g transform="translate(62.1 59.1) rotate(-36.7)" fill="#c8102e"><ellipse rx="4.6" ry="8.4"/><circle cx="4.0" cy="-13.1" r="1.9"/><circle cx="1.9" cy="-11.7" r="1.4"/><circle cx="-0.2" cy="-11.7" r="1.4"/><circle cx="-2.3" cy="-11.1" r="1.4"/><circle cx="-4.4" cy="-10.5" r="1.4"/></g><g transform="translate(123.0 50.0) rotate(0.0)" fill="#c8102e"><ellipse rx="4.6" ry="8.4"/><circle cx="-4.0" cy="-13.1" r="1.9"/><circle cx="-1.9" cy="-11.7" r="1.4"/><circle cx="0.2" cy="-11.7" r="1.4"/><circle cx="2.3" cy="-11.1" r="1.4"/><circle cx="4.4" cy="-10.5" r="1.4"/></g><g transform="translate(171.9 59.1) rotate(36.7)" fill="#c8102e"><ellipse rx="4.6" ry="8.4"/><circle cx="4.0" cy="-13.1" r="1.9"/><circle cx="1.9" cy="-11.7" r="1.4"/><circle cx="-0.2" cy="-11.7" r="1.4"/><circle cx="-2.3" cy="-11.1" r="1.4"/><circle cx="-4.4" cy="-10.5" r="1.4"/></g><g transform="translate(211.1 82.8) rotate(73.3)" fill="#c8102e"><ellipse rx="4.6" ry="8.4"/><circle cx="-4.0" cy="-13.1" r="1.9"/><circle cx="-1.9" cy="-11.7" r="1.4"/><circle cx="0.2" cy="-11.7" r="1.4"/><circle cx="2.3" cy="-11.1" r="1.4"/><circle cx="4.4" cy="-10.5" r="1.4"/></g><g transform="translate(203.5 111.7) rotate(110.0)" fill="#c8102e"><ellipse rx="4.6" ry="8.4"/><circle cx="4.0" cy="-13.1" r="1.9"/><circle cx="1.9" cy="-11.7" r="1.4"/><circle cx="-0.2" cy="-11.7" r="1.4"/><circle cx="-2.3" cy="-11.1" r="1.4"/><circle cx="-4.4" cy="-10.5" r="1.4"/></g></svg>
+              <p class="rd-mean">Seven steps together</p>
+              <p class="rd-p">With the bride’s saree tied to the groom’s uttariyam (the Brahma mudi), the couple take seven steps together beside the sacred fire, with Agni as witness.</p>
+              <p class="rd-p">Each step carries a vow — for nourishment, strength, prosperity, happiness, children, long life through the seasons, and lifelong friendship. With the seventh step they become companions for life, and the marriage is complete.</p>
+              <p class="rd-when"><span>When</span>Beside the sacred fire, later in the ceremony</p>
+            </template>
           </article>
         </li>
         <li class="rite reveal">
           <span class="rite-node" aria-hidden="true">౯</span>
-          <article class="rite-card">
+          <article class="rite-card" role="button" tabindex="0" aria-label="Arundhati Nakshatram — tap for more info">
             <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7Z"/></svg></span>
             <p class="r-tel">అరుంధతి నక్షత్రం</p>
             <h3>Arundhati Nakshatram</h3>
             <p class="r-desc">The couple is shown the Arundhati star, the timeless symbol of a devoted bond.</p>
+            <p class="r-more">Tap for more info ›</p>
+            <template class="rite-info">
+              <svg class="rd-art" viewBox="0 0 240 150" role="img" aria-label="Illustration of Arundhati Nakshatram"><rect width="240" height="150" rx="14" fill="url(#riNight)"/><circle cx="123.5" cy="90.8" r="1" fill="#fff" opacity="0.77"/><circle cx="110.3" cy="124.7" r="1" fill="#fff" opacity="0.80"/><circle cx="95.9" cy="61.5" r="0.6" fill="#fff" opacity="0.64"/><circle cx="97.7" cy="33.5" r="0.6" fill="#fff" opacity="0.62"/><circle cx="32.6" cy="88.5" r="0.6" fill="#fff" opacity="0.40"/><circle cx="41.9" cy="21.6" r="0.8" fill="#fff" opacity="0.71"/><circle cx="23.8" cy="35.9" r="0.8" fill="#fff" opacity="0.47"/><circle cx="64.5" cy="54.6" r="0.8" fill="#fff" opacity="0.64"/><circle cx="33.8" cy="73.4" r="0.8" fill="#fff" opacity="0.64"/><circle cx="77.9" cy="27.3" r="1" fill="#fff" opacity="0.57"/><circle cx="67.3" cy="119.1" r="0.6" fill="#fff" opacity="0.66"/><circle cx="54.0" cy="135.6" r="0.8" fill="#fff" opacity="0.47"/><circle cx="129.7" cy="11.6" r="1" fill="#fff" opacity="0.55"/><circle cx="152.0" cy="20.2" r="0.8" fill="#fff" opacity="0.66"/><circle cx="211.4" cy="55.7" r="0.6" fill="#fff" opacity="0.67"/><circle cx="182.5" cy="52.2" r="0.6" fill="#fff" opacity="0.71"/><circle cx="184.6" cy="109.6" r="0.6" fill="#fff" opacity="0.80"/><circle cx="191.3" cy="107.1" r="0.6" fill="#fff" opacity="0.50"/><circle cx="118.4" cy="106.0" r="0.6" fill="#fff" opacity="0.80"/><circle cx="113.8" cy="33.9" r="1" fill="#fff" opacity="0.88"/><circle cx="108.2" cy="133.6" r="0.8" fill="#fff" opacity="0.88"/><circle cx="89.7" cy="37.5" r="0.6" fill="#fff" opacity="0.64"/><circle cx="83.7" cy="72.7" r="1" fill="#fff" opacity="0.82"/><circle cx="115.4" cy="95.5" r="1" fill="#fff" opacity="0.44"/><circle cx="156.0" cy="129.9" r="1" fill="#fff" opacity="0.78"/><circle cx="115.1" cy="31.9" r="1" fill="#fff" opacity="0.57"/><circle cx="187.4" cy="138.2" r="0.8" fill="#fff" opacity="0.63"/><circle cx="174.5" cy="19.4" r="0.6" fill="#fff" opacity="0.49"/><circle cx="36.5" cy="28.3" r="0.8" fill="#fff" opacity="0.80"/><circle cx="40.7" cy="118.8" r="0.8" fill="#fff" opacity="0.73"/><circle cx="86.5" cy="81.5" r="0.6" fill="#fff" opacity="0.41"/><circle cx="187.1" cy="105.3" r="0.6" fill="#fff" opacity="0.66"/><circle cx="217.1" cy="66.1" r="0.6" fill="#fff" opacity="0.81"/><circle cx="55.3" cy="41.7" r="0.8" fill="#fff" opacity="0.65"/><circle cx="179.1" cy="51.7" r="1" fill="#fff" opacity="0.61"/><circle cx="37.4" cy="129.9" r="0.8" fill="#fff" opacity="0.85"/><circle cx="156.4" cy="117.2" r="1" fill="#fff" opacity="0.61"/><circle cx="213.6" cy="75.2" r="1" fill="#fff" opacity="0.48"/><circle cx="122.4" cy="125.0" r="0.6" fill="#fff" opacity="0.70"/><circle cx="181.8" cy="28.1" r="0.6" fill="#fff" opacity="0.64"/><circle cx="170.4" cy="82.6" r="0.8" fill="#fff" opacity="0.74"/><circle cx="126.9" cy="72.7" r="0.6" fill="#fff" opacity="0.84"/><circle cx="20.7" cy="33.6" r="0.6" fill="#fff" opacity="0.79"/><circle cx="121.7" cy="83.3" r="0.6" fill="#fff" opacity="0.62"/><circle cx="145.2" cy="75.7" r="1" fill="#fff" opacity="0.50"/><circle cx="70.1" cy="76.1" r="0.8" fill="#fff" opacity="0.65"/>
+  <path d="M56 64L60 98L98 104L104 74ZM104 74L138 66L168 58L204 76"
+        stroke="#e9c873" stroke-width=".8" fill="none" opacity=".55"/>
+  <circle cx="56" cy="64" r="2.6" fill="#fff8e0"/><circle cx="60" cy="98" r="2.6" fill="#fff8e0"/><circle cx="98" cy="104" r="2.6" fill="#fff8e0"/><circle cx="104" cy="74" r="2.6" fill="#fff8e0"/><circle cx="138" cy="66" r="2.6" fill="#fff8e0"/><circle cx="168" cy="58" r="2.6" fill="#fff8e0"/><circle cx="204" cy="76" r="2.6" fill="#fff8e0"/>
+  <circle cx="168" cy="58" r="11" fill="none" stroke="#ffd36b" stroke-width="1" opacity=".8"/>
+  <circle cx="168" cy="58" r="3.4" fill="#fff"/><circle cx="174" cy="52" r="1.5" fill="#fff"/>
+  <text x="168" y="82" text-anchor="middle" font-family="Cinzel, serif" font-size="8" fill="#ffe6b0" letter-spacing=".5">VASISHTHA</text>
+  <text x="182" y="42" text-anchor="middle" font-family="Cinzel, serif" font-size="8" fill="#ffd36b" letter-spacing=".5">ARUNDHATI</text>
+  <path d="M30 22a12 12 0 1 0 12 16a9 9 0 1 1-12-16Z" fill="#fff3d6" opacity=".9"/></svg>
+              <p class="rd-mean">Seeing the star Arundhati</p>
+              <p class="rd-p">The groom shows the bride the faint star Arundhati beside the star Vasishtha in the Saptarishi mandala, the seven stars of the Big Dipper. (Astronomers know the pair as Alcor and Mizar.)</p>
+              <p class="rd-p">Arundhati, wife of sage Vasishtha, is revered as the ideal of devotion. The two stars are always seen together, circling the sky as one — a blessing for a bond just as steady.</p>
+              <p class="rd-when"><span>When</span>On the evening of the wedding, after sunset</p>
+            </template>
           </article>
         </li>
       </ol>
@@ -292,6 +423,7 @@
 
     <!-- ============ COUNTDOWN ============ -->
     <section class="countdown">
+      <span class="temple-border tb-top" aria-hidden="true"></span><span class="temple-border tb-bottom" aria-hidden="true"></span>
       <p class="eyebrow light">Counting down to the muhurtham</p>
       <p class="cd-sub">సుముహూర్తానికి ఇంకా</p>
       <div class="tiles">
@@ -377,6 +509,10 @@
 
     <!-- ============ FOOTER ============ -->
     <footer class="blessing">
+      <span class="temple-border tb-top" aria-hidden="true"></span>
+      <svg class="vilakku vk-l" viewBox="0 0 60 160" aria-hidden="true"><use href="#vilakku"/></svg>
+      <svg class="vilakku vk-r" viewBox="0 0 60 160" aria-hidden="true"><use href="#vilakku"/></svg>
+      <svg class="namam" viewBox="0 0 160 70" aria-hidden="true"><use href="#namam"/></svg>
       <p class="om">ఓం</p>
       <p class="bless-text">With the blessings of our elders<br>and the warmth of your presence.</p>
       <p class="bless-names">Prithvi &amp; Jyosthna</p>
@@ -405,6 +541,15 @@
     </div>
 
     <!-- Tap the dhol: Cocktails & Celebration -->
+    <!-- Sacred ritual detail: filled from the tapped card's <template class="rite-info"> -->
+    <div class="rcard rcard-rite" data-card="rite" hidden>
+      <div class="rd-scroll" id="riteDetail"></div>
+      <div class="rd-nav">
+        <button class="rd-btn" id="ritePrev" aria-label="Previous ritual">‹</button>
+        <span class="rd-count" id="riteCount"></span>
+        <button class="rd-btn" id="riteNext" aria-label="Next ritual">›</button>
+      </div>
+    </div>
     <div class="rcard rcard-dhol" data-card="dhol" hidden>
       <div class="flip" id="dholFlip">
         <div class="face front">
@@ -417,7 +562,7 @@
           <p class="rc-caption light">Tap the dhol to the beat</p>
         </div>
         <div class="face back">
-          <div class="rc-photo"><img src="assets/img/celebration.webp" alt="Prithvi and Jyosthna at the lake"></div>
+          <div class="rc-photo rc-couple"><img src="assets/img/couple-celebration.webp" alt="Prithvi and Jyosthna in Indo-Western wedding outfits"></div>
           <p class="rc-small">The knot is tied, the hearts are full —</p>
           <p class="rc-script">Celebration</p>
           <p class="rc-caps">Cocktails &amp; Dance</p>
@@ -468,6 +613,54 @@
         </g>
         <g fill="#e8c23a"><ellipse cx="34" cy="90" rx="3" ry="7"/><ellipse cx="40" cy="92" rx="3" ry="7"/><ellipse cx="46" cy="90" rx="3" ry="7"/></g>
       </symbol>
+      <symbol id="bell" viewBox="0 0 40 74">
+        <linearGradient id="bellGold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a5a16"/><stop offset=".4" stop-color="#ffe3a0"/><stop offset=".7" stop-color="#d9a441"/><stop offset="1" stop-color="#7a4d0e"/></linearGradient>
+        <path d="M20 0V20" stroke="#c8962f" stroke-width="1.6" stroke-dasharray="2.5 1.5"/>
+        <circle cx="20" cy="21" r="3" fill="url(#bellGold)"/>
+        <path d="M7 54Q7 26 20 24Q33 26 33 54Z" fill="url(#bellGold)"/>
+        <path d="M10 44H30" stroke="#7a4d0e" stroke-width="1" opacity=".6"/>
+        <ellipse cx="20" cy="54" rx="15" ry="3.6" fill="#c8962f"/>
+        <circle cx="20" cy="61" r="3.6" fill="url(#bellGold)"/>
+        <g fill="#c8242b"><circle cx="20" cy="37" r="1.8"/></g>
+      </symbol>
+      <symbol id="vilakku" viewBox="0 0 60 160">
+        <linearGradient id="vkGold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7a4d0e"/><stop offset=".45" stop-color="#ffe3a0"/><stop offset=".75" stop-color="#d9a441"/><stop offset="1" stop-color="#7a4d0e"/></linearGradient>
+        <ellipse cx="30" cy="152" rx="24" ry="6" fill="url(#vkGold)"/>
+        <path d="M14 150Q30 128 46 150Z" fill="url(#vkGold)"/>
+        <rect x="27" y="62" width="6" height="76" fill="url(#vkGold)"/>
+        <g fill="url(#vkGold)"><ellipse cx="30" cy="80" rx="7" ry="3"/><ellipse cx="30" cy="104" rx="8" ry="3.4"/><ellipse cx="30" cy="128" rx="7" ry="3"/></g>
+        <path d="M4 52Q30 72 56 52Q30 60 4 52Z" fill="url(#vkGold)"/>
+        <path d="M28 52V24h4V52Z" fill="url(#vkGold)"/>
+        <path d="M30 6c5 5 6 12 0 18c-6-6-5-13 0-18Z" fill="url(#vkGold)"/>
+        <g class="vk-flame" fill="url(#vkFlame)">
+          <path d="M8 50c-4-3-4-8 0-13c4 5 4 10 0 13Z"/><path d="M30 46c-4-3-4-8 0-13c4 5 4 10 0 13Z" transform="translate(0 4)"/><path d="M52 50c-4-3-4-8 0-13c4 5 4 10 0 13Z"/>
+        </g>
+        <linearGradient id="vkFlame" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e4511b"/><stop offset=".5" stop-color="#ffb627"/><stop offset="1" stop-color="#fff3b0"/></linearGradient>
+      </symbol>
+      <symbol id="namam" viewBox="0 0 160 70">
+        <!-- shankha (conch) -->
+        <g transform="translate(26 36)">
+          <path d="M-14 6C-18-6-6-18 6-14C14-11 16-2 10 6C6 12-8 14-14 6Z" fill="#fff3d6" stroke="#e9c873" stroke-width="1.4"/>
+          <path d="M-6 2C-6-6 4-8 6-2C7 2 2 4 0 2" fill="none" stroke="#e9c873" stroke-width="1.2"/>
+          <path d="M10 6l8 6" stroke="#e9c873" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <!-- Tirumala namam -->
+        <g transform="translate(80 34)">
+          <path d="M-13-28V6Q-13 22 0 22Q13 22 13 6V-28H7V6Q7 15 0 15Q-7 15-7 6V-28Z" fill="#fff8ea"/>
+          <rect x="-2" y="-30" width="4" height="40" rx="2" fill="#e0251c"/>
+        </g>
+        <!-- chakra -->
+        <g transform="translate(134 36)" fill="none" stroke="#e9c873" stroke-width="1.6">
+          <circle r="15"/><circle r="5" fill="#e9c873"/>
+          <path d="M0-15V15M-15 0H15M-10.6-10.6L10.6 10.6M-10.6 10.6L10.6-10.6"/>
+          <g stroke-width="1.2"><path d="M0-15l2-4M15 0l4 2M0 15l-2 4M-15 0l-4-2"/></g>
+        </g>
+      </symbol>
+      <radialGradient id="riBg" cx=".5" cy=".4" r=".75"><stop offset="0" stop-color="#fffaf0"/><stop offset=".7" stop-color="#fbedcc"/><stop offset="1" stop-color="#f1d9a4"/></radialGradient>
+      <radialGradient id="riNight" cx=".5" cy=".3" r=".9"><stop offset="0" stop-color="#2b3a73"/><stop offset=".7" stop-color="#151d45"/><stop offset="1" stop-color="#0b1030"/></radialGradient>
+      <linearGradient id="riGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0b8"/><stop offset=".4" stop-color="#e9b94f"/><stop offset="1" stop-color="#8e5e18"/></linearGradient>
+      <linearGradient id="riRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c62a2a"/><stop offset="1" stop-color="#7c1010"/></linearGradient>
+      <linearGradient id="riFire" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e4511b"/><stop offset=".55" stop-color="#ffb627"/><stop offset="1" stop-color="#fff3b0"/></linearGradient>
       <symbol id="muggu" viewBox="0 0 220 60">
         <g fill="none" stroke="#b8892f" stroke-width="1.4" stroke-linecap="round">
           <path d="M0 30 H70 M150 30 H220"/>
@@ -496,6 +689,6 @@
   </svg>
 
   <script src="config.js?v=3"></script>
-  <script src="script.js?v=16"></script>
+  <script src="script.js?v=23"></script>
 </body>
 </html>
