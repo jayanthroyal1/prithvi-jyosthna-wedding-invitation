@@ -194,7 +194,7 @@ body.modal-open { overflow: hidden; }
 .banana.flip-x { transform: scaleX(-1); }
 .hero-grid { display: grid; grid-template-columns: 50% 1fr; gap: 8px; padding: 14px 12px 0; align-items: end; }
 /* Couple cut-out standing in front of a mandapam arch, stepping out of its frame */
-.hero-photo { position: relative; aspect-ratio: 760 / 1138; }
+.hero-photo { position: relative; aspect-ratio: 760 / 1133; }
 .arch-bg {
   position: absolute; left: 4%; right: 4%; top: 12%; bottom: 3%;
   border-radius: 999px 999px 8px 8px; border: 2px solid var(--gold);
